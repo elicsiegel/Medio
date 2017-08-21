@@ -2,16 +2,23 @@
 
 **Root**
  - App
+  * Wrapped in Provider and Hash Router
+
+**App**
+ - Header with Title and Greeting Container
+ - AuthRoutes
+ - Route to Story Detail Container
+ - Route to Story Form Container (for editing and creating)
 
 **GreetingContainer**
  - Greeting
 
-**AuthFormContainer**
- - AuthForm
+**SessionFormContainer**
+ - SessionForm
 
 **StoriesIndexContainer**
- - Stories List
- - StoryItem
+ - Stories Index 
+ - Story Index Item
 
 **StoryDetailContainer**
  - Story
@@ -38,3 +45,4 @@
 | "/stories/:storyId" | "StoryDetailContainer" |
 | "/index" | "StoriesIndexContainer" |
 | "/stories/new" | "StoryFormContainer"
+| "/stories/:storyId/edit"| "StoryFormContainer"
