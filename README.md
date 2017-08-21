@@ -18,7 +18,8 @@ sufficient CSS styling:
 - [ ] New account creation, login, and guest/demo login
 - [ ] Stories 
 - [ ] Commenting on Stories
-- [ ] Follows
+- [ ] Follows and Feed
+- [ ] Likes
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
