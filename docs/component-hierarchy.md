@@ -6,9 +6,10 @@
 
 **App**
  - Header with Title and Greeting Container
- - AuthRoutes
- - Route to Story Detail Container
- - Route to Story Form Container (for editing and creating)
+ - AuthRoutes: "/login" and "/signup"
+ - Route to Story Index Container: "/"
+ - Route to Story Detail Container: "stories/:storyId"
+ - Route to Story Form Container: "stories/new" and "stories/:storyId/edit" (for editing and creating)
 
 **GreetingContainer**
  - Greeting
@@ -43,6 +44,6 @@
 | "/signup" | "AuthFormContainer" |
 | "/login" | "AuthFormContainer" |
 | "/stories/:storyId" | "StoryDetailContainer" |
-| "/index" | "StoriesIndexContainer" |
-| "/stories/new" | "StoryFormContainer"
-| "/stories/:storyId/edit"| "StoryFormContainer"
+| "/" | "StoriesIndexContainer" |
+| "/stories/new" | "StoryFormContainer" |
+| "/stories/:storyId/edit"| "StoryFormContainer" |
