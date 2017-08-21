@@ -44,6 +44,6 @@
 ### Likes
 
 - `GET /api/likes/:userId`: get all likes for a user
-- `GET /api/likes/:postId`: get all likes for a post
+- `GET /api/likes/:storyId`: get all likes for a post
 - `POST /api/likes`
 - `DELETE /api/likes/id`
