@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/ALgfuX0Q/Medio
+[trello]: https://trello.com/b/N0KbtqX2/medio
 
 ## Minimum Viable Product
 
