@@ -95,10 +95,26 @@ body {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 form button {
   margin-top: 10px;
+  max-width: 60px;
+  background: none;
+  border: none;
+}
+
+form button:hover {
+  color: blue;
+}
+
+.errors-container {
+  min-height: 43px; 
+  min-width: 200px;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
 }
 
 .errors {
