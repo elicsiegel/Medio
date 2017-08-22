@@ -1,20 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {signup, login, logout} from './util/session_api_util';
+
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.signup = signup; 
+  window.login = login; 
+  window.logout = logout;
+
   const root = document.getElementById('root');
   ReactDOM.render(<h1>Welcome to Medio</h1>, root);
 });
 
-
-// $.ajax({
-//   method: 'POST', 
-//   url: '/api/users',
-//   data: { user: { username: 'eli', password: 123456 } }
-// }); 
-
-// $.ajax({
-//   method: 'POST', 
-//   url: '/api/session',
-//   data: { user: { username: 'eli', password: 123456 } }
-// });
