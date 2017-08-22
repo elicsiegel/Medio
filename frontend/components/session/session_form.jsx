@@ -25,12 +25,11 @@ class SessionForm extends React.Component {
   }
 
   handleModalClick(e) {
-    // debugger
     e.stopPropagation()
     
     e.target.classList.forEach((klass) => {
       if (klass === "form-modal-overlay") {
-       this.props.history.push("/")
+        this.props.history.push("/")
       }
     });
     
