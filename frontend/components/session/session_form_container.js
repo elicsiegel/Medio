@@ -14,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     processForm: (user) => {
-      // debugger
       if(ownProps.location.pathname ===  '/login'){
         return dispatch(login(user));
       }
