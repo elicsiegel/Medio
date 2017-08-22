@@ -22,8 +22,20 @@
   padding-right: 50px; 
  }
 
+.nav-user-welcome {
+  display: flex; 
+}
+
+.nav-user-welcome h3 {
+  margin: 5px;
+}
+
+.nav-user-welcome button {
+  margin: 5px;
+}
+
  .session-links a {
-  padding: 5px;
+  padding: 10px;
  }
 
 .form-div {
