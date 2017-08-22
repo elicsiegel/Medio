@@ -23,7 +23,8 @@
 
 **StoryDetailContainer**
  - Story
-  * Author
+  * Author Item (Has author bio and button to follow/unfollow author)
+  * Like Item (has button to like/unlike story)
 
 **StoryFormContainer**
  - StoryForm
@@ -34,8 +35,7 @@
 **CommentFormContainer**
  - CommentForm
 
-**FollowsContainer**
- - Follows/Followers
+
 
 ## Routes
 

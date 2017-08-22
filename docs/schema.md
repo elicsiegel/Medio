@@ -10,7 +10,7 @@ email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null
 image_url       | string
-
+created_at      | timestamp |
 
 ## stories
 column name | data type | details
@@ -29,7 +29,7 @@ id          | integer   | not null, primary key
 body        | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 story_id    | integer   | not null, foreign key (references posts), indexed
-
+created_at  | timestamp |
 
 ## follows
 column name | data type | details
