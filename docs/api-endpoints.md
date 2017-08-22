@@ -29,20 +29,22 @@
 ### Comments
 
 - A story's comments will be displayed on the show page for that story
-- `GET /api/stories/:story_id/comments`
+- get comments with story
 - `POST /api/stories/:story_id/comments`
-- `GET /api/comments/:id`
+
 - `DELETE /api/comments/:id`
 
 ### Follows
+  (get follows with user)
+  post and delete follows on user controller 
 
-- `GET /api/follows/:followerId`: get all follows for a user
-- `GET /api/follows/:followeeId`: get all followers for a user
 - `POST /api/follows`
 - `DELETE /api/follows/:id`
 
 ### Likes
-
+  bring count of likes with story, bring in key on jbuilder if liked by current user  
+  post and delete likes from stories controller 
+  
 - `GET /api/likes/:userId`: get all likes for a user
 - `GET /api/likes/:storyId`: get all likes for a post
 - `POST /api/likes`

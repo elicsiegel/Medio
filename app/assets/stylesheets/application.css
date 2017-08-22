@@ -34,18 +34,62 @@
   margin: 5px;
 }
 
- .session-links a {
+.session-links a {
   padding: 10px;
- }
+}
 
-.form-div {
-  text-align: center; 
+.form-modal-overlay {
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  /*display: none;  Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+  animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 .form {
-  display: flex; 
-  flex-direction: column;
-  text-align: center; 
-  align-items: center;
-  margin: 20px;
+  position: fixed;
+  margin: auto;
+  margin-top: 50px;
+  padding: 30px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border: none;
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+  overflow: auto;
+  animation-name: fromBottom;
+  animation-duration: 0.75s;
+  z-index: 2000;
+  zoom: 1.2;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+.errors {
+  font-size: 12px;
+  max-width: 150px;
+  list-style: none;
+  color: red;
+}
+
