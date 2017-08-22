@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.form {
+  display: flex; 
+  flex-direction: column;
+  text-align: center; 
+  align-items: center;
+  margin: 20px;
+}
