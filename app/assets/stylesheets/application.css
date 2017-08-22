@@ -98,8 +98,12 @@ form {
   align-items: center;
 }
 
+form label {
+  margin: 5px;
+}
+
 form button {
-  margin-top: 10px;
+  margin-top: 20px;
   max-width: 60px;
   background: none;
   border: none;
@@ -110,17 +114,19 @@ form button:hover {
 }
 
 .errors-container {
-  min-height: 43px; 
-  min-width: 200px;
+  min-height: 40px; 
+  min-width: 180px;
   display: flex; 
   flex-direction: column;
   align-items: center; 
 }
 
 .errors {
-  font-size: 12px;
+  font-size: 10px;
   max-width: 150px;
   list-style: none;
   color: red;
+  animation-name: fade-in;
+  animation-duration: 1s;
 }
 
