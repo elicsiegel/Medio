@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .nav {
   display: flex; 
   justify-content: space-between;
