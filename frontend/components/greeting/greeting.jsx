@@ -11,7 +11,7 @@ const Greeting = ({logout, currentUser}) => {
     );
   } else {
     return(
-      <div>
+      <div className="session-links">
         <Link to='/signup'>Sign Up</Link>
         <Link to='/login'>Log In</Link>
       </div>

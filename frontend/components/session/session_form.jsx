@@ -42,8 +42,7 @@ class SessionForm extends React.Component {
 
     if(this.props.formType ===  '/login'){
       return(
-        <div>
-          <Link to='/signup'>Sign Up</Link>
+        <div className="form-div">
           <h2>Login</h2>
           { errors }
           { form }
@@ -52,8 +51,7 @@ class SessionForm extends React.Component {
     }
     else{
       return(
-        <div>
-          <Link to='/login'>Log In</Link>
+        <div className="form-div">
           <h2>Signup</h2>
           { errors }
           { form }

@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.nav {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .session-links a {
+  padding: 5px;
+ }
+
+.form-div {
+  text-align: center; 
+}
+
 .form {
   display: flex; 
   flex-direction: column;
