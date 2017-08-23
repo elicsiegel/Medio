@@ -39,6 +39,7 @@ body {
 
 .nav-user-welcome {
   display: flex; 
+  align-items: center;
 }
 
 .nav-user-welcome h3 {
