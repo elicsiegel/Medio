@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import StoryDetail from './story_detail';
 import { allStories } from '../../reducers/selectors';
-import { fetchStory } from '../../actions/story_actions';
+import { fetchStory, deleteStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    deleteStory: (story) => dispatch(deleteStory(story)), 
     fetchStory: (story_id) => {
       return dispatch(fetchStory(story_id))
     }

@@ -30,3 +30,10 @@ export const updateStory = story => {
     data: story 
   })
 }
+
+export const destroyStory = story => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/stories/${story.id}`
+  })
+);

@@ -2,6 +2,7 @@ import * as APIUtil from '../util/story_api_util';
 
 export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
+export const REMOVE_STORY = 'REMOVE_STORY';
 
 export const receiveStories = (stories) => {
   return {
@@ -16,6 +17,11 @@ export const receiveStory = story => {
     story: story 
   }
 };
+
+export const removeStory = story => ({
+  type: REMOVE_STORY,
+  story: story 
+});
 
 export const fetchStories = () => (dispatch) => {
   return APIUtil.fetchStories()
@@ -34,3 +40,7 @@ export const updateStory = story => dispatch => (
 export const fetchStory = id => dispatch => {
   return APIUtil.fetchStory(id).then(story => dispatch(receiveStory(story)))
 };
+
+export const deleteStory = story => dispatch => (
+  APIUtil.destroyStory(story).then(story => dispatch(removeStory(story)))
+);
