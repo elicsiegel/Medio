@@ -27,6 +27,10 @@ export const createStory = story => dispatch => {
   .then(story => dispatch(receiveStory(story)))
 };
 
+export const updateStory = story => dispatch => (
+  APIUtil.updateStory(story).then(story => dispatch(receiveStory(story)))
+);
+
 export const fetchStory = id => dispatch => {
   return APIUtil.fetchStory(id).then(story => dispatch(receiveStory(story)))
 };

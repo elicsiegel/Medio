@@ -5,7 +5,8 @@ import { fetchStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => {
   return {
-    story: allStories(state)[0]
+    story: allStories(state)[0],
+    currentUser: state.session.currentUser
   };
 };
 

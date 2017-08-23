@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import StoryForm from './story_form';
 // import { allPosts } from '../reducers/selectors';
 
-import { createStory } from '../../actions/story_actions';
+import { createStory, updateStory, fetchStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -11,9 +11,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createStory: (story) => dispatch(createStory(story))
-  // updatePost: post => dispatch(updatePost(post)),
-  // fetchPost: (post) => dispatch(fetchPost(post))
+  createStory: (story) => dispatch(createStory(story)),
+  updateStory: story => dispatch(updateStory(story)),
+  fetchStory: (story) => dispatch(fetchStory(story))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryForm);

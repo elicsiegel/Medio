@@ -21,3 +21,12 @@ export const createStory = story => {
     data: story 
   })
 };
+
+export const updateStory = story => {
+  debugger
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/stories/${story.story.id}`,
+    data: story 
+  })
+}

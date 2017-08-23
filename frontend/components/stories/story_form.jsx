@@ -20,11 +20,13 @@ class StoryForm extends React.Component {
 
   componentDidMount() {
     // signals if page is edit page or not
-    // if (this.props.match) {
-    //   this.props.fetchPost(this.props.match.params.postId).then( (res) => { 
-    //     this.setState({ title: res.post.title, body: res.post.body, id: res.post.id })
-    //   }) 
-    // }
+    if (this.props.match.path === '/stories/:storyId/edit') {
+      const storyId = this.props.match.params.storyId; 
+
+      this.props.fetchStory(storyId).then( (res) => { 
+        this.setState({ title: res.story[storyId].title, body: res.story[storyId].body, id: res.story[storyId].id })
+      }) 
+    }
   }
 
   handleSubmit(e) {
@@ -32,10 +34,10 @@ class StoryForm extends React.Component {
     debugger
     const story = Object.assign({}, this.state);
 
-    if (this.props.match.path === "/stories/edit") {
-      // this.props.updatePost({post}).then(({post}) => {
-      //   this.props.history.push(`/posts/${post.id}`)
-      // })
+    if (this.props.match.path === "/stories/:storyId/edit") {
+      this.props.updateStory({story}).then(({story}) => {
+        this.props.history.push(`/stories/${story.id}`)
+      })
     } 
     else {
       this.props.createStory( { story } ).then(
@@ -47,7 +49,7 @@ class StoryForm extends React.Component {
   render() {
     let title;
     
-    if (this.props.match.path === "/stories/edit") {
+    if (this.props.match.path === "/stories/:storyId/edit") {
       title = <h3>Edit Story</h3>
     }  else {
       title = <h3>Create New Story</h3>

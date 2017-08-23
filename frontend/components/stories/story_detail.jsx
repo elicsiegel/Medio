@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class StoryDetail extends React.Component {
 
   componentDidMount() {
-    // debugger
-    const story = this.props.fetchStory(this.props.match.params.storyId); 
+    if (this.props.match.url !== '/stories/new') {
+      const story = this.props.fetchStory(this.props.match.params.storyId);  
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -16,12 +18,25 @@ class StoryDetail extends React.Component {
   }
 
   render() {
-    // debugger
-    if (this.props.story) {
+
+    if (this.props.story && this.props.match.url !== '/stories/new') {
+      const { title, body, author, created_at, id } = this.props.story;
+      
+      let editLink;
+      if (this.props.currentUser) {
+        if (author.id === this.props.currentUser.id) {
+          
+          editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
+        }   
+      }
+
       return (
-        <div className="post-show"> 
-          <h1>{this.props.story.title}</h1>
-          <p>{this.props.story.body}</p>
+        <div className="story-show">
+          {editLink}
+          <h4>{author.username}</h4> 
+          <p>{created_at}</p>
+          <h1>{title}</h1>
+          <p>{body}</p>
         </div>
       ); 
     }
