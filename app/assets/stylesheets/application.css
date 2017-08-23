@@ -78,6 +78,37 @@ body {
   padding-left: 25%;
 }
 
+/* STORY FORM */
+
+.story-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-form form {
+  align-items: flex-end;
+}
+
+.story-form input {
+  border: none;
+  font-size: 25px;
+}
+
+.story-form .input-title {
+  width: 800px;
+  height: 50px;
+}
+
+.story-form .input-body {
+  width: 800px;
+  height: 200px;
+}
+
+.publish-button {
+
+}
+
 /* SESSION FORM */
 
 .form-modal-overlay {

@@ -5,3 +5,11 @@ export const fetchStories = () => {
     error: (err) => console.log(err)
   })
 }
+
+export const createStory = story => {
+ return $.ajax({
+    method: 'POST',
+    url: '/api/stories',
+    data: story 
+  })
+};
