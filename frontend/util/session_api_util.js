@@ -25,8 +25,3 @@ export const logout = () => {
   });
 };
 
-// $.ajax({
-//   method: 'POST',
-//   url: '/api/stories',
-//   data: {story: {title: "Title", body: "body", author_id: 25 }}
-// })

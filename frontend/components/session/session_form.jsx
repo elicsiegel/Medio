@@ -31,7 +31,10 @@ class SessionForm extends React.Component {
 
       formData.append("user[username]", this.state.username);
       formData.append("user[password]", this.state.password);
-      formData.append("user[image]", this.state.imageFile);
+      
+      if (this.state.imageFile !== null) {
+        formData.append("user[image]", this.state.imageFile);
+      }
       this.props.processForm(formData);
 
     } else {
