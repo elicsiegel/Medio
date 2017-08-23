@@ -1,6 +1,6 @@
 # Medio
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Heroku link][heroku] 
 
 [Trello link][trello]
 
