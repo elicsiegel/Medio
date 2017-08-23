@@ -54,6 +54,30 @@ body {
   color: #26b56d;
 }
 
+/* STORIES INDEX */
+
+.storiesIndexItem {
+  width: 350px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+.storiesIndexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 225px;
+  padding-left: 225px;
+  text-align: center;
+  /*width: 1000px;*/
+}
+
+.storiesIndexTitle {
+  border-bottom: 1 px solid black;
+  padding-left: 25%;
+}
+
 /* SESSION FORM */
 
 .form-modal-overlay {

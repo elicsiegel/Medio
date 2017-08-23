@@ -1,4 +1,5 @@
 import React from 'react';
+import StoriesIndexItem from './stories_index_item';
 
 class StoriesIndex extends React.Component {
   componentDidMount() {
@@ -9,13 +10,18 @@ class StoriesIndex extends React.Component {
   render() {
     const {stories} = this.props;
 
-    const storyItems = stories.map((story) => <li>{ story.title }</li>);
+    const storyItems = stories.map((story) => {
+      return <StoriesIndexItem story={story} key={`story-index-key${story.id}`}/>
+    });
 
     return (
       <div>
-        <ul>
+        <div className="storiesIndexTitle">
+          <h4>Featured Stories</h4>
+        </div>
+        <div className="storiesIndexContainer">
           {storyItems}
-        </ul>
+        </div>
       </div>
     );
   }
