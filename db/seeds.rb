@@ -14,6 +14,7 @@ user3 = User.create!(username: "Davis", password: "password")
 user4 = User.create!(username: "Michelle", password: "password") 
 user5 = User.create!(username: "Freddy", password: "password") 
 user6 = User.create!(username: "Betty", password: "password") 
+user7 = User.create!(username: "Guest", password: "password")
 
 Story.destroy_all
 

@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     this.updateInput = this.updateInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
+    this.logInGuestUser = this.logInGuestUser.bind(this);
   }
 
   updateInput(type) {
@@ -34,6 +35,14 @@ class SessionForm extends React.Component {
       }
     });
     
+  }
+
+  logInGuestUser() {
+    const user = {
+      username: "Guest",
+      password: "password"
+    }
+    this.props.processForm(user);
   }
 
   render() {
@@ -63,6 +72,7 @@ class SessionForm extends React.Component {
             <input type="password" id="password" onChange={ this.updateInput('password') }></input>
             <button>Submit</button>
           </form>
+          <p onClick={this.logInGuestUser}>Guest Login</p>
         </div>
       
     );

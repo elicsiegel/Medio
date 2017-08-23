@@ -18,6 +18,8 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+/* NAV BAR */
+
 .nav {
   display: flex; 
   justify-content: space-between;
@@ -25,6 +27,15 @@ body {
   padding-left: 150px;
   padding-right: 150px; 
  }
+
+.nav a {
+  text-decoration: none; 
+  color: gray;
+}
+
+.nav a:hover {
+  color: black;
+}
 
 .nav-user-welcome {
   display: flex; 
@@ -40,7 +51,10 @@ body {
 
 .session-links a {
   padding: 10px;
+  color: #26b56d;
 }
+
+/* SESSION FORM */
 
 .form-modal-overlay {
   display: flex; 
@@ -103,7 +117,9 @@ form h2 {
 form label {
   margin: 5px;
 }
-
+.form p:hover {
+  color: blue;
+}
 form button {
   margin-top: 20px;
   max-width: 60px;
