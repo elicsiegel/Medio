@@ -31,7 +31,6 @@ class StoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const story = Object.assign({}, this.state);
 
     if (this.props.match.path === "/stories/:storyId/edit") {
