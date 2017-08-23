@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user1 = User.create!(username: "Eli", password: "password") 
+
+story1 = Story.create!(title: "Our first story", body: "Once upon a time, Medio was born", author_id: user1.id)

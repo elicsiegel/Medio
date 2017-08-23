@@ -20,3 +20,9 @@ export const logout = () => {
     url: '/api/session',
   });
 };
+
+// $.ajax({
+//   method: 'POST',
+//   url: '/api/stories',
+//   data: {story: {title: "Title", body: "body", author_id: 25 }}
+// })
