@@ -71,7 +71,7 @@ class StoryForm extends React.Component {
             cols='20'
             value={this.state.body}
             rows='5'
-            placeholder="Body"
+            placeholder="Tell your story..."
             onChange={this.update('body')}
             required></input>
           <button className="publish-button">Publish</button>
