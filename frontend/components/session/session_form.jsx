@@ -7,12 +7,16 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      imageFile: null,
+      imageUrl: null 
     };
+
     this.updateInput = this.updateInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.logInGuestUser = this.logInGuestUser.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   updateInput(type) {
@@ -21,8 +25,20 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    debugger
+    if (this.props.formType === '/signup') {
+      let formData = new FormData();
+
+      formData.append("user[username]", this.state.username);
+      formData.append("user[password]", this.state.password);
+      formData.append("user[image]", this.state.imageFile);
+      this.props.processForm(formData);
+
+    } else {
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user); 
+    }
+    
   }
 
   handleModalClick(e) {
@@ -35,6 +51,19 @@ class SessionForm extends React.Component {
       }
     });
     
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({imageFile: file, imageUrl: fileReader.result });
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file); 
+    }
   }
 
   logInGuestUser() {
@@ -70,7 +99,9 @@ class SessionForm extends React.Component {
             <input type="text" id="username" onChange={ this.updateInput('username') }></input>
             <label>Password: </label>
             <input type="password" id="password" onChange={ this.updateInput('password') }></input>
+            <input type="file" onChange={this.updateFile}></input>
             <button>Submit</button>
+            <img src={this.state.imageUrl}/>
           </form>
           <p onClick={this.logInGuestUser}>Guest Login</p>
         </div>

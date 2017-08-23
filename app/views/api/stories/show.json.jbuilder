@@ -3,5 +3,6 @@ json.set! @story.id do
   json.title @story.title
   json.body @story.body
   json.author @story.author, :id, :username
+  json.author_img_url asset_path(@story.author.image.url)
   json.created_at @story.created_at
 end
