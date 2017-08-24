@@ -67,6 +67,7 @@ body {
   height: 200px;
   border: .5px solid lightgray;
   margin: 3px;
+  display: flex;
 }
 
 .storiesIndexContainer {
@@ -82,6 +83,14 @@ body {
 .storiesIndexTitle {
   border-bottom: 1 px solid black;
   padding-left: 25%;
+}
+
+.index-title-body {
+  min-width: 50%;
+}
+
+.stories-index-img {
+  max-width: 50%;
 }
 
 /* STORY SHOW */
