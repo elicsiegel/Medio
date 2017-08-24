@@ -101,7 +101,7 @@ class SessionForm extends React.Component {
             multiple={false}
             accept="image/*"
             onDrop={this.onImgDrop.bind(this)}>
-            <p id="upload-image-p">Add a Profile Pic</p>
+            <p id="upload-image-p">Drop file here or click to upload Profile Picture</p>
           </Dropzone>     
         </div>
       );

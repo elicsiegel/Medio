@@ -175,6 +175,12 @@ body {
   height: 200px;
 }
 
+#upload-image-p {
+  border: dotted;
+  padding: 10px;
+  font-size: 10px;
+}
+
 #upload-image-p:hover {
   color: lightgreen;
 }

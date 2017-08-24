@@ -101,7 +101,7 @@ class StoryForm extends React.Component {
                 multiple={false}
                 accept="image/*"
                 onDrop={this.onImgDrop.bind(this)}>
-                <p id="upload-image-p">Upload an image</p>
+                <p id="upload-image-p">Drop file here or click to upload Story Photo</p>
               </Dropzone>
             </div>
           </div>
