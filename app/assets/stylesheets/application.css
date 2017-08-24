@@ -87,6 +87,19 @@ body {
   align-items: center;
 }
 
+.story-info {
+  display: flex;
+  align-items: center;
+}
+
+#author-image {
+  max-width: 70px; 
+}
+
+#modify-own-story {
+
+}
+
 /* STORY FORM */
 
 .story-form {

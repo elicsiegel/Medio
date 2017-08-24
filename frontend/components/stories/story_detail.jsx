@@ -28,6 +28,20 @@ class StoryDetail extends React.Component {
     });
   }
 
+  stylizeDate(created_at) {
+    const date = new Date(created_at);
+
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const months = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    const dayOfMonth = date.getDate();
+    const dayOfWeek = date.getDay();
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+      "Friday", "Saturday"];
+    return `${weekDays[dayOfWeek]} ${months[month]} ${dayOfMonth}, ${year}`;
+  }
+
   render() {
 
     if (this.props.story && this.props.match.url !== '/stories/new') {
@@ -44,11 +58,15 @@ class StoryDetail extends React.Component {
 
       return (
         <div className="story-show">
-          {editLink}
-          {deleteButton}
-          <img src={author_img_url} />
-          <h4>{author.username}</h4> 
-          <p>{created_at}</p>
+          <div id="modify-own-story">
+            {editLink}
+            {deleteButton}
+          </div>
+          <div className="story-info">
+            <img id="author-image" src={author_img_url} />
+            <h4>{author.username}</h4> 
+            <p>{this.stylizeDate(created_at)}</p>
+          </div>
           <h1>{title}</h1>
           <p>{body}</p>
         </div>
