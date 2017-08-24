@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Redirect } from 'react-router-dom'; 
+import Dropzone from 'react-dropzone';
 
 class StoryForm extends React.Component {
 
@@ -20,8 +21,11 @@ class StoryForm extends React.Component {
     return e => this.setState({[property]: e.target.value});
   }
 
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
+  onImgDrop(files) {
+    this.updateFile(files[0])
+  }
+
+  updateFile(file) {
     let fileReader = new FileReader();
 
     fileReader.onloadend = () => {
@@ -81,8 +85,7 @@ class StoryForm extends React.Component {
     if (this.props.match.path === "/stories/:storyId/edit") {
       title = <h3>Edit Story</h3>
       imageName = <h5 id="current-image-title">Current Image</h5>; 
-    }  else {
-      imageName = <h5 id="current-image-title">Add an Image</h5>; 
+    }  else { 
       title = <h3>Create New Story</h3>
     } 
     return (
@@ -93,9 +96,13 @@ class StoryForm extends React.Component {
             <div>
               {imageName}
               <img id="story-form-img" src={this.state.imageUrl}/>
-            </div>
-            <div id="image-update-container">
-              <input type='file' onChange={this.updateFile}/>
+              <Dropzone
+                className="image-update-container"
+                multiple={false}
+                accept="image/*"
+                onDrop={this.onImgDrop.bind(this)}>
+                <p id="upload-image-p">Upload an image</p>
+              </Dropzone>
             </div>
           </div>
           <input

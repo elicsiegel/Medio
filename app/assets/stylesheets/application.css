@@ -175,6 +175,10 @@ body {
   height: 200px;
 }
 
+#upload-image-p:hover {
+  color: lightgreen;
+}
+
 #upload-image {
   display: flex;
   flex-direction: column;
