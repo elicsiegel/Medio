@@ -14,19 +14,26 @@ export const fetchStory = (id) => {
   })
 }
 
-export const createStory = story => {
+export const createStory = formData => {
  return $.ajax({
     method: 'POST',
     url: '/api/stories',
-    data: story 
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
   })
 };
 
-export const updateStory = story => {
+export const updateStory = formData => {
+  debugger
   return $.ajax({
     method: 'PATCH',
-    url: `/api/stories/${story.story.id}`,
-    data: story 
+    url: `/api/stories/${formData.get('story[id]')}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
   })
 }
 

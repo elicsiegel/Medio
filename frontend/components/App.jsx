@@ -13,12 +13,14 @@ const App = () => (
       <Link to='/'><h1>Medio</h1></Link>
       <GreetingContainer />
     </div>
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-    <ProtectedRoute path="/stories/:storyId/edit" component={StoryFormContainer} />
-    <ProtectedRoute path="/stories/new" component={StoryFormContainer} />
-    <Route path="/stories/:storyId" exact component={StoryDetailContainer} />
-    <Route path="/" exact component={ StoriesIndexContainer } />
+    <div className="content">
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <ProtectedRoute path="/stories/:storyId/edit" component={StoryFormContainer} />
+      <ProtectedRoute path="/stories/new" component={StoryFormContainer} />
+      <Route path="/stories/:storyId" exact component={StoryDetailContainer} />
+      <Route path="/" exact component={ StoriesIndexContainer } />
+    </div>
   </div>
 );
 

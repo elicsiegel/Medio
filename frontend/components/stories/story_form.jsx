@@ -8,14 +8,28 @@ class StoryForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      author_id: this.props.currentUser.id 
+      author_id: this.props.currentUser.id
     };
 
+    this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(property) {
     return e => this.setState({[property]: e.target.value});
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({imageFile: file, imageUrl: fileReader.result });
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file); 
+    }
   }
 
   componentDidMount() {
@@ -24,7 +38,7 @@ class StoryForm extends React.Component {
       const storyId = this.props.match.params.storyId; 
 
       this.props.fetchStory(storyId).then( (res) => { 
-        this.setState({ title: res.story[storyId].title, body: res.story[storyId].body, id: res.story[storyId].id })
+        this.setState({ title: res.story[storyId].title, imageUrl: res.story[storyId].story_img_url, body: res.story[storyId].body, id: res.story[storyId].id })
       }) 
     }
   }
@@ -33,19 +47,32 @@ class StoryForm extends React.Component {
     e.preventDefault();
     const story = Object.assign({}, this.state);
 
+    let formData = new FormData();
+
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    formData.append("story[author_id]", this.state.author_id);
+
+    if (this.state.imageFile !== undefined) {
+        formData.append("story[image]", this.state.imageFile);
+      }
+
     if (this.props.match.path === "/stories/:storyId/edit") {
-      this.props.updateStory({story}).then(({story}) => {
-        this.props.history.push(`/stories/${story.id}`)
+      formData.append("story[id]", this.state.id);
+      this.props.updateStory(formData).then(({story}) => {
+        debugger
+        this.props.history.push(`/stories/${Object.keys(story)[0]}`)
       })
     } 
     else {
-      this.props.createStory( { story } ).then(
+      this.props.createStory( formData ).then(
         this.props.history.push(`/`)
       );
     }  
   }
 
   render() {
+    debugger
     let title;
     
     if (this.props.match.path === "/stories/:storyId/edit") {
@@ -57,6 +84,8 @@ class StoryForm extends React.Component {
       <div className="story-form">
         {title}
         <form  onSubmit={this.handleSubmit}>
+          <img src={this.state.imageUrl}/>
+          <input type='file' onChange={this.updateFile}/>
           <input
             className="input-title"
             ref="title"

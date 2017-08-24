@@ -45,7 +45,7 @@ class StoryDetail extends React.Component {
   render() {
 
     if (this.props.story && this.props.match.url !== '/stories/new') {
-      const { title, body, author, created_at, id, author_img_url } = this.props.story;
+      const { title, body, author, created_at, id, author_img_url, story_img_url } = this.props.story;
       
       let editLink;
       let deleteButton; 
@@ -67,6 +67,7 @@ class StoryDetail extends React.Component {
             <h4>{author.username}</h4> 
             <p>{this.stylizeDate(created_at)}</p>
           </div>
+          <img src={story_img_url} />
           <h1>{title}</h1>
           <p>{body}</p>
         </div>
