@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import Dropzone from 'react-dropzone';
 
 class SessionForm extends React.Component {
 
@@ -56,8 +57,12 @@ class SessionForm extends React.Component {
     
   }
 
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
+  onImgDrop(files) {
+    this.updateFile(files[0])
+  }
+
+  updateFile(file) {
+    
     let fileReader = new FileReader();
 
     fileReader.onloadend = () => {
@@ -90,11 +95,14 @@ class SessionForm extends React.Component {
       );
       imageUpload = (
         <div className="image-upload">
-          <h5>Add Profile Pic</h5>
           <img className="image-box" src={this.state.imageUrl}/>
-          <div>
-            <input className="session-file-input" type="file" onChange={this.updateFile}></input>
-          </div>
+          <Dropzone
+            className="image-update-container"
+            multiple={false}
+            accept="image/*"
+            onDrop={this.onImgDrop.bind(this)}>
+            <p id="upload-image-p">Add a Profile Pic</p>
+          </Dropzone>     
         </div>
       );
     }
