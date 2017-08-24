@@ -90,6 +90,10 @@ body {
   background: white;
 }
 
+.index-title-body a{
+  text-decoration: none;
+}
+
 .stories-index-img {
   height: 100%; 
 }

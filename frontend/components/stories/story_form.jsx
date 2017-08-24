@@ -93,17 +93,15 @@ class StoryForm extends React.Component {
         {title}
         <form  onSubmit={this.handleSubmit}>
           <div id="upload-image">
-            <div>
-              {imageName}
-              <img id="story-form-img" src={this.state.imageUrl}/>
-              <Dropzone
-                className="image-update-container"
-                multiple={false}
-                accept="image/*"
-                onDrop={this.onImgDrop.bind(this)}>
-                <p id="upload-image-p">Drop file here or click to upload Story Photo</p>
-              </Dropzone>
-            </div>
+            {imageName}
+            <img id="story-form-img" src={this.state.imageUrl}/>
+            <Dropzone
+              className="image-update-container"
+              multiple={false}
+              accept="image/*"
+              onDrop={this.onImgDrop.bind(this)}>
+              <p id="upload-image-p">Drop file here or click to upload Story Photo</p>
+            </Dropzone>
           </div>
           <input
             className="input-title"
