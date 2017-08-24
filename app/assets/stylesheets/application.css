@@ -170,6 +170,19 @@ body {
   100% {transform: translateY(0) }
 }
 
+.image-upload {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-box {
+  max-width: 35px;
+}
+
+.session-file-input {
+  padding-left: 20%; 
+}
 
 form {
   display: flex;

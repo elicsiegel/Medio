@@ -32,7 +32,7 @@ class StoryDetail extends React.Component {
 
     if (this.props.story && this.props.match.url !== '/stories/new') {
       const { title, body, author, created_at, id, author_img_url } = this.props.story;
-      debugger
+      
       let editLink;
       let deleteButton; 
       if (this.props.currentUser) {

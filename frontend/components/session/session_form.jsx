@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+
     if (this.props.formType === '/signup') {
       let formData = new FormData();
 
@@ -89,7 +89,13 @@ class SessionForm extends React.Component {
         <h2>Signup</h2>
       );
       imageUpload = (
-        <input type="file" onChange={this.updateFile}></input>
+        <div className="image-upload">
+          <h5>Add Profile Pic</h5>
+          <img className="image-box" src={this.state.imageUrl}/>
+          <div>
+            <input className="session-file-input" type="file" onChange={this.updateFile}></input>
+          </div>
+        </div>
       );
     }
 
@@ -108,7 +114,6 @@ class SessionForm extends React.Component {
             <input type="password" id="password" onChange={ this.updateInput('password') }></input>
             {imageUpload}
             <button>Submit</button>
-            <img src={this.state.imageUrl}/>
           </form>
           <p onClick={this.logInGuestUser}>Guest Login</p>
         </div>
