@@ -124,6 +124,19 @@ body {
   outline: none;
 }
 
+.story-form textarea {
+  border: none;
+  font-size: 25px;
+  outline: none;
+  resize: none;
+}
+
+.story-form input[type="file"] {
+  border: none;
+  font-size: 10px;
+  outline: none;
+}
+
 .story-form .input-title {
   width: 800px;
   height: 50px;
@@ -133,6 +146,21 @@ body {
 .story-form .input-body {
   width: 800px;
   height: 200px;
+}
+
+#upload-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#current-image-title {
+  margin: auto;
+  text-align: center;
+}
+
+#story-form-img {
+  max-width: 100px;
 }
 
 .publish-button {
@@ -193,6 +221,11 @@ body {
   display: flex; 
   flex-direction: column;
   align-items: center;
+}
+
+.image-upload input[type="file"] {
+  border: none;
+  outline: none;
 }
 
 .image-box {

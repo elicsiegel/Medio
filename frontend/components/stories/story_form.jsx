@@ -12,6 +12,7 @@ class StoryForm extends React.Component {
     };
 
     this.updateFile = this.updateFile.bind(this);
+    this.deleteImage = this.deleteImage.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -30,6 +31,10 @@ class StoryForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file); 
     }
+  }
+
+  deleteImage() {
+    this.setState({imageUrl: ""})
   }
 
   componentDidMount() {
@@ -60,7 +65,6 @@ class StoryForm extends React.Component {
     if (this.props.match.path === "/stories/:storyId/edit") {
       formData.append("story[id]", this.state.id);
       this.props.updateStory(formData).then(({story}) => {
-        debugger
         this.props.history.push(`/stories/${Object.keys(story)[0]}`)
       })
     } 
@@ -72,20 +76,26 @@ class StoryForm extends React.Component {
   }
 
   render() {
-    debugger
     let title;
-    
+    let imageName;
     if (this.props.match.path === "/stories/:storyId/edit") {
       title = <h3>Edit Story</h3>
+      imageName = <h5 id="current-image-title">Current Image</h5>; 
     }  else {
+      imageName = <h5 id="current-image-title">Add an Image</h5>; 
       title = <h3>Create New Story</h3>
     } 
     return (
       <div className="story-form">
         {title}
         <form  onSubmit={this.handleSubmit}>
-          <img src={this.state.imageUrl}/>
-          <input type='file' onChange={this.updateFile}/>
+          <div id="upload-image">
+            <div>
+              {imageName}
+              <img id="story-form-img" src={this.state.imageUrl}/>
+            </div>
+            <input type='file' onChange={this.updateFile}/>
+          </div>
           <input
             className="input-title"
             ref="title"
@@ -93,7 +103,7 @@ class StoryForm extends React.Component {
             placeholder="Title"
             onChange={this.update('title')}
             required/>
-          <input
+          <textarea
             className="input-body"
             ref="body"
             cols='20'
@@ -101,7 +111,7 @@ class StoryForm extends React.Component {
             rows='5'
             placeholder="Tell your story..."
             onChange={this.update('body')}
-            required></input>
+            required></textarea>
           <button className="publish-button">Publish</button>
         </form>
       </div> 

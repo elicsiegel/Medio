@@ -26,7 +26,6 @@ export const createStory = formData => {
 };
 
 export const updateStory = formData => {
-  debugger
   return $.ajax({
     method: 'PATCH',
     url: `/api/stories/${formData.get('story[id]')}`,
