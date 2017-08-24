@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
 
       formData.append("user[username]", this.state.username);
       formData.append("user[password]", this.state.password);
-      
+
       if (this.state.imageFile !== null) {
         formData.append("user[image]", this.state.imageFile);
       }
@@ -79,6 +79,7 @@ class SessionForm extends React.Component {
 
   render() {
     let title;
+    let imageUpload;
     if(this.props.formType ===  '/login') {
       title = (
         <h2>Login</h2>
@@ -86,6 +87,9 @@ class SessionForm extends React.Component {
     } else {
       title = (
         <h2>Signup</h2>
+      );
+      imageUpload = (
+        <input type="file" onChange={this.updateFile}></input>
       );
     }
 
@@ -102,7 +106,7 @@ class SessionForm extends React.Component {
             <input type="text" id="username" onChange={ this.updateInput('username') }></input>
             <label>Password: </label>
             <input type="password" id="password" onChange={ this.updateInput('password') }></input>
-            <input type="file" onChange={this.updateFile}></input>
+            {imageUpload}
             <button>Submit</button>
             <img src={this.state.imageUrl}/>
           </form>
