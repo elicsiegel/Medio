@@ -87,10 +87,16 @@ body {
 
 .index-title-body {
   min-width: 50%;
+  background: white;
 }
 
 .stories-index-img {
+  height: 100%; 
+}
+
+.image-div {
   max-width: 50%;
+  overflow: hidden;
 }
 
 /* STORY SHOW */
@@ -113,6 +119,10 @@ body {
 
 #author-image {
   max-width: 70px; 
+}
+
+.story-detail-img {
+  max-width: 1000px;
 }
 
 #modify-own-story > *{
