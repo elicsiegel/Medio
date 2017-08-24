@@ -95,7 +95,7 @@ body {
 }
 
 .image-div {
-  max-width: 50%;
+  min-width: 50%;
   overflow: hidden;
 }
 
