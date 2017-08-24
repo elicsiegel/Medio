@@ -94,7 +94,9 @@ class StoryForm extends React.Component {
               {imageName}
               <img id="story-form-img" src={this.state.imageUrl}/>
             </div>
-            <input type='file' onChange={this.updateFile}/>
+            <div id="image-update-container">
+              <input type='file' onChange={this.updateFile}/>
+            </div>
           </div>
           <input
             className="input-title"

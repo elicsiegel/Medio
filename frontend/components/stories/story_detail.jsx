@@ -63,13 +63,17 @@ class StoryDetail extends React.Component {
             {deleteButton}
           </div>
           <div className="story-info">
-            <img id="author-image" src={author_img_url} />
+            <div id="author-image-container">
+              <img id="author-image" src={author_img_url} />
+            </div>
             <h4>{author.username}</h4> 
             <p>{this.stylizeDate(created_at)}</p>
           </div>
           <h1>{title}</h1>
           <img className="story-detail-img" src={story_img_url} />
-          <p>{body}</p>
+          <section className="story-detail-body">
+            <p>{body}</p>
+          </section>
         </div>
       ); 
     }

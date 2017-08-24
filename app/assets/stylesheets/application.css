@@ -121,6 +121,10 @@ body {
   max-width: 70px; 
 }
 
+.story-detail-body {
+  white-space: pre-wrap;
+}
+
 .story-detail-img {
   max-width: 1000px;
 }
