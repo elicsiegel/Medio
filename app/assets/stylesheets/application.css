@@ -98,12 +98,16 @@ body {
   align-items: center;
 }
 
+.story-info > * {
+  padding: 5px;
+}
+
 #author-image {
   max-width: 70px; 
 }
 
-#modify-own-story {
-
+#modify-own-story > *{
+  padding: 7px;
 }
 
 /* STORY FORM */
