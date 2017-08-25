@@ -63,7 +63,7 @@ body {
 /* STORIES INDEX */
 
 .storiesIndexItem {
-  width: 350px;
+  width: 500px;
   height: 200px;
   border: .5px solid lightgray;
   margin: 3px;
@@ -74,8 +74,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-right: 225px;
-  padding-left: 225px;
+  padding-right: 100px;
+  padding-left: 100px;
   text-align: center;
   /*width: 1000px;*/
 }
