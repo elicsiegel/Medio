@@ -70,6 +70,10 @@ body {
   display: flex;
 }
 
+.stories-index-item-link {
+  text-decoration: none; 
+}
+
 .storiesIndexContainer {
   display: flex;
   flex-wrap: wrap;

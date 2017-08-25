@@ -19,22 +19,24 @@ class StoriesIndexItem extends React.Component {
     const formBody = this.props.story.body.slice(0, 100) + "..."
     const link = `/stories/${this.props.story.id}`
     return (
-      <div className="storiesIndexItem">
-        <div className="image-div">
-          <img className="stories-index-img" src={this.props.story.story_img_url} />
-        </div>
-        <div className="index-title-body">
-          <Link to={link}><h4>{this.props.story.title}</h4></Link>
-          <p>{formBody}</p>
-          <div className="author-info-index">
-            <div className="author-index-image-div">
-              <img className="author-index-image" src={this.props.story.author_img_url} />
+      <Link to={link} className="stories-index-item-link">
+        <div className="storiesIndexItem">
+          <div className="image-div">
+            <img className="stories-index-img" src={this.props.story.story_img_url} />
+          </div>
+          <div className="index-title-body">
+            <h4>{this.props.story.title}</h4>
+            <p>{formBody}</p>
+            <div className="author-info-index">
+              <div className="author-index-image-div">
+                <img className="author-index-image" src={this.props.story.author_img_url} />
+              </div>
+              <p>{this.props.story.author.username}</p>
+              <p>{this.stylizeDate(this.props.story.created_at)}</p>
             </div>
-            <p>{this.props.story.author.username}</p>
-            <p>{this.stylizeDate(this.props.story.created_at)}</p>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
