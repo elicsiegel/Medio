@@ -6,12 +6,12 @@ class Comments extends React.Component {
 
   render() {
     
-    const { deleteComment, createComment, currentUser, story} = this.props;
+    const { deleteComment, createComment, currentUser, story, comments} = this.props;
 
     let commentItems;
 
-    if (this.props.story.comments) {
-      commentItems = this.props.story.comments.map((comment) => {
+    if (comments) {
+      commentItems = comments.map((comment) => {
         return <CommentItem comment={comment} 
                   currentUser={currentUser}
                   deleteComment={deleteComment} 
