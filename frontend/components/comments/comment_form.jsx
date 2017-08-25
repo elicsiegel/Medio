@@ -4,7 +4,7 @@ class CommentForm extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
@@ -18,6 +18,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault(); 
     this.props.createComment(this.state)
+    this.setState({body: ""});
   }
 
   update(property) {

@@ -16,8 +16,11 @@ const storiesReducer = (state = {}, action) => {
       delete nextState[action.story.id];
       return nextState;
     case REMOVE_COMMENT:
+      // debugger
       nextState = merge({}, state);
-      delete nextState[action.comment.story_id].comments[action.comment.id] ;
+      const index = state[action.comment.story_id].comment_ids.indexOf([action.comment.id])
+      nextState[action.comment.story_id].comment_ids.splice(index, 1)
+      
       return nextState;
     default:
       return state;

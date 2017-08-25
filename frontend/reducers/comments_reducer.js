@@ -11,7 +11,9 @@ const  commentsReducer = (state = {}, action) => {
       
       return merge({}, state, {[action.comment.id]: action.comment}); 
     case RECEIVE_STORY:
-
+      if (action.comments === undefined) {
+        action.comments = {};
+      }
       return action.comments;
     case REMOVE_COMMENT:
       nextState = merge({}, state);
