@@ -95,6 +95,11 @@ body {
   color: black;
 }
 
+.index-title-body > p{
+  font-size: 12px; 
+  color: gray;
+}
+
 .stories-index-img {
   height: 100%; 
 }

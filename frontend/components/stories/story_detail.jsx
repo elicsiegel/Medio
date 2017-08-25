@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentsContainer from '../comments/comments_container';
 
 class StoryDetail extends React.Component {
 
@@ -75,14 +76,15 @@ class StoryDetail extends React.Component {
           <section className="story-detail-body">
             <p>{body}</p>
           </section>
+          <div className="comment-list">
+            <CommentsContainer comments={this.props.story.comments}/>
+          </div>
         </div>
       ); 
     }
 
     return (
-      <div>
-
-      </div>
+      <div></div>
     );
   }
 }

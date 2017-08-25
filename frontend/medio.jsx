@@ -6,14 +6,17 @@ import {login, signup, logout} from './actions/session_actions';
 import configureStore from './store/store';
 
 import { fetchStories } from './actions/story_actions'; 
+import { receiveComment, removeComment } from './actions/comment_actions'; 
+import {storyComments} from './reducers/selectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // window.signup = signup; 
   // window.login = login; 
   // window.logout = logout;
   // const store = configureStore();
-  // window.store = store; 
-  
+  window.storyComments = storyComments; 
+  window.receiveComment = receiveComment; 
+  window.removeComment = removeComment;
   window.fetchStories = fetchStories;
   let store;
   
@@ -24,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.store = store; 
   window.dispatch = store.dispatch;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

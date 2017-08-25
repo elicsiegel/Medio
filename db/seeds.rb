@@ -25,6 +25,12 @@ file = File.open('app/assets/images/medio.jpg')
 story1.image = file
 story1.save!
 
+comment1 = Comment.create!(body: "our first comment", author_id: user2.id, story_id: story1.id)
+comment2 = Comment.create!(body: "our second comment", author_id: user2.id, story_id: story1.id)
+comment3 = Comment.create!(body: "our third comment", author_id: user2.id, story_id: story1.id)
+comment4 = Comment.create!(body: "our fourth comment", author_id: user2.id, story_id: story1.id)
+comment5 = Comment.create!(body: "our fifth comment", author_id: user2.id, story_id: story1.id)
+
 story2 = Story.new(title: "Drawing the Eclipse", body: "Today I drew the eclipse for CBS News in NY City, and while not a totality zone (love that phrase, which means a place where you can experience a full eclipse. NYC was about 75%), it didn’t matter to me. I was happy to be able to cover and draw the city I love so much, to draw New Yorkers as they gathered to gaze skyward. I was stationed at the American Museum of Natural History, where they held an “event” on their Hayden Planetarium terrace (a homecoming of sorts for me: my first job in NYC was in the art department of the museum).
 People were in a friendly, exited, chatty mood. I spent most of the time watching people, although I did put on my eclipse glasses three times to view the sun/moon; frankly I found the people more interesting. But the mood was unique: there were oos and aahs, and clapping at times. As I watched and drew the gathered group around me, what I felt was comaraderie, a relief to be spending time together doing something that was not about politics or feeling divided as a country. Perhaps that’s my spin. But nonetheless, it was wonderful to see such a diversity of people come out to watch the eclipse — the very young and the very old, and many, many different races.", author_id: user5.id)
 

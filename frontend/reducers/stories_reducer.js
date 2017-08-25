@@ -1,4 +1,5 @@
 import { RECEIVE_STORIES, RECEIVE_STORY, REMOVE_STORY } from '../actions/story_actions';
+import {REMOVE_COMMENT} from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 const storiesReducer = (state = {}, action) => {
@@ -13,6 +14,11 @@ const storiesReducer = (state = {}, action) => {
     case REMOVE_STORY:
       nextState = merge({}, state);
       delete nextState[action.story.id];
+      return nextState;
+    case REMOVE_COMMENT:
+      debugger
+      nextState = merge({}, state);
+      delete nextState[action.comment.story_id].comments[action.comment.id] ;
       return nextState;
     default:
       return state;
