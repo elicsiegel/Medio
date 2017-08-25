@@ -17,8 +17,10 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault(); 
-    this.props.createComment(this.state)
-    this.setState({body: ""});
+    this.props.createComment(this.state).then(() => { 
+        this.setState({body: ""})
+    }); 
+    
   }
 
   update(property) {
@@ -33,6 +35,7 @@ class CommentForm extends React.Component {
           <textarea
             className="comment-form-input"
             ref="body"
+            value={this.state.body}
             cols='20'
             rows='5'
             placeholder="Add a comment..."
