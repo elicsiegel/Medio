@@ -6,7 +6,6 @@ export const destroyComment = comment => (
 );
 
 export const createComment = comment => {
-  debugger
  return $.ajax({
     method: 'POST',
     url: `/api/stories/${comment.story_id}/comments`,
