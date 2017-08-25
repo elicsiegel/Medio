@@ -15,11 +15,12 @@ class StoryDetail extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // if (newProps.post) {
-    //   if (newProps.post.id !== +newProps.match.params.postId) {
-    //     this.props.fetchPost(newProps.match.params.postId);
-    //   }
-    // }  
+    
+    if (newProps.story) {
+      if (newProps.story.id !== +newProps.match.params.storyId) {
+        this.props.fetchStory(newProps.match.params.storyId);
+      }
+    }  
   }
 
   handleDelete() {
