@@ -92,10 +92,11 @@ body {
 
 .index-title-body a{
   text-decoration: none;
+  color: black;
 }
 
 .stories-index-img {
-  height: 100%; 
+  height: 125%; 
 }
 
 .author-index-image {

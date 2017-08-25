@@ -57,7 +57,7 @@ The stylistic range evident in Caravaggio’s chronology of works shows that his
   While the creation date of the Nativity will undoubtedly remain the subject of some debate, arguments to re-date the painting to 1600 have, thus far, been largely driven by speculation. In order for the new date to gain real traction, scholarship must responsibly interpret all documents used to support an earlier date, situate the archival materials within their appropriate cultural contexts, and separate fact from pure conjecture. The date of the Nativity holds implications for the entire Caravaggio field—and beyond. If the early date is accepted, not only will Caravaggio’s chronology change, altering future studies and interpretations, but also the dates for the potential dissemination of his style in Sicily.
 ")
 
-file = File.open('app/assets/images/CaravaggioNativity.jpg')
+file = File.open('app/assets/images/CaravaggioNativity.png')
 story5.image = file
 story5.save!
 
