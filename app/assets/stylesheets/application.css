@@ -64,7 +64,7 @@ body {
 
 .storiesIndexItem {
   width: 500px;
-  height: 250px;
+  height: 225px;
   border: .5px solid lightgray;
   margin: 3px;
   display: flex;
@@ -96,7 +96,7 @@ body {
 }
 
 .stories-index-img {
-  height: 125%; 
+  height: 100%; 
 }
 
 .author-index-image {
