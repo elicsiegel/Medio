@@ -5,13 +5,13 @@ import CommentForm from './comment_form';
 class Comments extends React.Component {
 
   render() {
-    // debugger
-    const {comments, deleteComment, createComment, currentUser, story} = this.props;
+    
+    const { deleteComment, createComment, currentUser, story} = this.props;
 
     let commentItems;
 
-    if (comments) {
-      commentItems = comments.map((comment) => {
+    if (this.props.story.comments) {
+      commentItems = this.props.story.comments.map((comment) => {
         return <CommentItem comment={comment} 
                   currentUser={currentUser}
                   deleteComment={deleteComment} 
@@ -19,9 +19,14 @@ class Comments extends React.Component {
       });  
     }
 
+    let commentForm;
+    if (this.props.currentUser) {
+      commentForm = <CommentForm story={story} createComment={createComment} currentUser={currentUser} />
+    }
+
     return (
       <div>
-        <CommentForm story={story} createComment={createComment} currentUser={currentUser} />
+      {commentForm} 
         <div className="commentsTitle">
           <h4>Comments</h4>
         </div>

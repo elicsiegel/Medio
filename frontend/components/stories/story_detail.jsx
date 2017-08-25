@@ -57,7 +57,7 @@ class StoryDetail extends React.Component {
           editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
         }   
       }
-
+      
       return (
         <div className="story-show">
           <div id="modify-own-story">
@@ -77,7 +77,7 @@ class StoryDetail extends React.Component {
             <p>{body}</p>
           </section>
           <div className="comment-list">
-            <CommentsContainer story={this.props.story} comments={this.props.story.comments}/>
+            <CommentsContainer story={this.props.story}/>
           </div>
         </div>
       ); 

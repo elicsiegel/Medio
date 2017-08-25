@@ -4,6 +4,7 @@ class CommentForm extends React.Component {
 
   constructor(props) {
     super(props);
+    
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
