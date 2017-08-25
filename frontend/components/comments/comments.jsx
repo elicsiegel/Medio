@@ -1,14 +1,12 @@
 import React from 'react';
 import CommentItem from './comment_item';
+import CommentForm from './comment_form';
 
 class Comments extends React.Component {
-  componentDidMount() {
-    // request comments from the API  
-  }
 
   render() {
     // debugger
-    const {comments, deleteComment, currentUser} = this.props;
+    const {comments, deleteComment, createComment, currentUser, story} = this.props;
 
     let commentItems;
 
@@ -23,6 +21,7 @@ class Comments extends React.Component {
 
     return (
       <div>
+        <CommentForm story={story} createComment={createComment} currentUser={currentUser} />
         <div className="commentsTitle">
           <h4>Comments</h4>
         </div>

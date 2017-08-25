@@ -11,10 +11,11 @@ export const receiveStories = (stories) => {
   };
 };
 
-export const receiveStory = story => {
+export const receiveStory = ({story, comments}) => {
   return {
     type: RECEIVE_STORY,
-    story: story 
+    story: story,
+    comments: comments 
   }
 };
 

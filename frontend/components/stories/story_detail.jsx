@@ -77,7 +77,7 @@ class StoryDetail extends React.Component {
             <p>{body}</p>
           </section>
           <div className="comment-list">
-            <CommentsContainer comments={this.props.story.comments}/>
+            <CommentsContainer story={this.props.story} comments={this.props.story.comments}/>
           </div>
         </div>
       ); 

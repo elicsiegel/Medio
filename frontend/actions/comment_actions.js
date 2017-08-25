@@ -27,16 +27,10 @@ export const deleteComment = comment => dispatch => (
   APIUtil.destroyComment(comment).then(comment => dispatch(removeComment(comment)))
 );
 
-export const fetchComments = (storyId) => (dispatch) => {
-  return APIUtil.fetchComments(storyId)
-    .then(comments => dispatch(receiveComments(comments)));
-};
-
-
-
-export const createStory = story => dispatch => {
-  return APIUtil.createStory(story)
-  .then(story => dispatch(receiveStory(story)))
+export const createComment = comment => dispatch => {
+  debugger
+  return APIUtil.createComment(comment)
+  .then(comment => dispatch(receiveComment(comment)))
 };
 
 export const updateStory = story => dispatch => (

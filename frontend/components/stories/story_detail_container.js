@@ -3,9 +3,10 @@ import StoryDetail from './story_detail';
 import { allStories } from '../../reducers/selectors';
 import { fetchStory, deleteStory } from '../../actions/story_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    story: allStories(state)[0],
+    story: state.stories[ownProps.match.params.storyId],
+    comments: Object.values(state.comments), 
     currentUser: state.session.currentUser
   };
 };
