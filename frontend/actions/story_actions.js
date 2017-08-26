@@ -4,10 +4,11 @@ export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
 
-export const receiveStories = (stories) => {
+export const receiveStories = ({stories, comments}) => {
   return {
     type: RECEIVE_STORIES,
-    stories: stories
+    stories: stories,
+    comments: comments
   };
 };
 

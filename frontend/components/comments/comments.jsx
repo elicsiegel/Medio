@@ -7,7 +7,7 @@ class Comments extends React.Component {
   render() {
     
     const { deleteComment, createComment, currentUser, story, comments} = this.props;
-
+    
     let commentItems;
 
     if (comments) {

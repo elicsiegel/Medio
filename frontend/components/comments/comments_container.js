@@ -6,7 +6,7 @@ import { allComments } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
   return {
     story: ownProps.story,
-    comments: allComments(state),
+    comments: allComments(state, ownProps.story),
     currentUser: state.session.currentUser,
   };
 };

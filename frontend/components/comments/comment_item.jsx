@@ -34,7 +34,8 @@ class CommentItem extends React.Component {
   }
 
   handleEdit() {
-
+    this.toggleEdit()
+    
   }
 
   render() {
