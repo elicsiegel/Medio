@@ -11,17 +11,20 @@ class StoryDetail extends React.Component {
 
   componentDidMount() {
     if (this.props.match.url !== '/stories/new') {
-      const story = this.props.fetchStory(this.props.match.params.storyId);  
+      if (this.props.story === undefined) {
+        // debugger
+        this.props.fetchStory(this.props.match.params.storyId);   
+      }
     }
   }
 
   componentWillReceiveProps(newProps) {
     
-    if (newProps.story) {
-      if (newProps.story.id !== +newProps.match.params.storyId) {
+      if (newProps.story === undefined) {
+        // debugger
         this.props.fetchStory(newProps.match.params.storyId);
       }
-    }  
+      
   }
 
   handleDelete() {
@@ -45,7 +48,7 @@ class StoryDetail extends React.Component {
   }
 
   render() {
-
+    // debugger
     if (this.props.story && this.props.match.url !== '/stories/new') {
       const { title, body, author, created_at, id, author_img_url, story_img_url } = this.props.story;
 
