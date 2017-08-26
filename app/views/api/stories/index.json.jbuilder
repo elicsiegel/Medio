@@ -18,6 +18,8 @@ json.comments do
     story.comments.each do |comment|
       json.set! comment.id do 
         json.id comment.id
+        json.author comment.author, :id, :username
+        json.author_img_url asset_path(comment.author.image.url)
         json.author_id comment.author_id
         json.body comment.body
         json.story_id comment.story_id

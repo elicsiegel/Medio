@@ -35,7 +35,7 @@ class CommentItem extends React.Component {
 
   handleEdit() {
     this.toggleEdit()
-    
+
   }
 
   render() {
@@ -55,6 +55,7 @@ class CommentItem extends React.Component {
           {editButton}
         </div>
         <div className="comment-item-body"> 
+          <img className="comment-author-img" src={this.props.comment.author_img_url} />
           {this.props.comment.body}
         </div>
       </div>

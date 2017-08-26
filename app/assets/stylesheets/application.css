@@ -377,4 +377,10 @@ form button:hover {
   justify-content: center;
 }
 
+/* COMMENT ITEM */
+
+.comment-author-img {
+  max-width: 10px;
+}
+
 
