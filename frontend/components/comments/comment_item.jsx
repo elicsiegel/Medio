@@ -5,7 +5,16 @@ class CommentItem extends React.Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      body: "",
+      author_id: null,
+      story_id: null 
+    };
+
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.editStatus = false; 
   }
 
@@ -25,6 +34,14 @@ class CommentItem extends React.Component {
     this.props.deleteComment(this.props.comment);
   }
 
+  handleUpdate(e) {
+    e.preventDefault();
+    this.props.updateComment(this.state).then(() => {
+      this.editStatus = false; 
+      this.setState({body: ""});
+    });
+  }
+
   toggleEdit() {
     if (this.editStatus === false) {
       this.editStatus = true;
@@ -35,17 +52,32 @@ class CommentItem extends React.Component {
 
   handleEdit() {
     this.toggleEdit()
+    this.setState({body: this.props.comment.body, id: this.props.comment.id, author_id: this.props.comment.author_id, story_id: this.props.comment.story_id}); 
+  }
 
+  update(property) {
+    return e => this.setState({[property]: e.target.value});
   }
 
   render() {
     let deleteButton;
     let editButton;
+    let editForm;
     if (this.props.currentUser) {
       if (this.props.comment.author_id === this.props.currentUser.id) {
         deleteButton = <button onClick={this.handleDelete}>Delete Comment</button>
         editButton = <button onClick={this.handleEdit}>Edit Comment</button>
-      }   
+      }
+      if (this.editStatus) { 
+        editForm = (
+            <form onSubmit={this.handleUpdate}>
+              <input className="input-title" value={this.state.body} onChange={this.update('body')} required/>
+              <button className="publish-button">Update Comment</button>
+            </form>
+          ); 
+      } else {
+        editForm = <p>{this.props.comment.body}</p>
+      }
     }
 
     return (
@@ -55,8 +87,8 @@ class CommentItem extends React.Component {
           {editButton}
         </div>
         <div className="comment-item-body"> 
-          <img className="comment-author-img" src={this.props.comment.author_img_url} />
-          {this.props.comment.body}
+          <img className="comment-author-img" src={this.props.comment.author_img_url} /> 
+          {editForm}
         </div>
       </div>
     );

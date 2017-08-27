@@ -6,7 +6,7 @@ class Comments extends React.Component {
 
   render() {
     
-    const { deleteComment, createComment, currentUser, story, comments} = this.props;
+    const { deleteComment, createComment, updateComment, currentUser, story, comments} = this.props;
     
     let commentItems;
 
@@ -14,7 +14,8 @@ class Comments extends React.Component {
       commentItems = comments.map((comment) => {
         return <CommentItem comment={comment} 
                   currentUser={currentUser}
-                  deleteComment={deleteComment} 
+                  deleteComment={deleteComment}
+                  updateComment={updateComment} 
                   key={`comment-key${comment.id}`}/>
       });  
     }

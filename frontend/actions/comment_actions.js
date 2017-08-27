@@ -32,11 +32,9 @@ export const createComment = comment => dispatch => {
   .then(comment => dispatch(receiveComment(comment)))
 };
 
-export const updateStory = story => dispatch => (
-  APIUtil.updateStory(story).then(story => dispatch(receiveStory(story)))
+export const updateComment = comment => dispatch => (
+  APIUtil.updateComment(comment).then(comment => dispatch(receiveComment(comment)))
 );
 
-export const fetchStory = id => dispatch => {
-  return APIUtil.fetchStory(id).then(story => dispatch(receiveStory(story)))
-};
+
 
