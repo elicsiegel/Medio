@@ -51,7 +51,7 @@ class CommentItem extends React.Component {
   }
 
   handleEdit() {
-    this.toggleEdit()
+    this.editStatus = true; 
     this.setState({body: this.props.comment.body, id: this.props.comment.id, author_id: this.props.comment.author_id, story_id: this.props.comment.story_id}); 
   }
 
@@ -63,6 +63,7 @@ class CommentItem extends React.Component {
     let deleteButton;
     let editButton;
     let editForm;
+    
     if (this.props.currentUser) {
       if (this.props.comment.author_id === this.props.currentUser.id) {
         deleteButton = <button onClick={this.handleDelete}>Delete Comment</button>
@@ -75,10 +76,12 @@ class CommentItem extends React.Component {
               <button className="publish-button">Update Comment</button>
             </form>
           ); 
-      } else {
-        editForm = <p>{this.props.comment.body}</p>
-      }
+      } 
     }
+
+    if (this.editStatus === false){
+        editForm = <p className="comment-item-text">{this.props.comment.body}</p>
+      }
 
     return (
       <div className="comment-item">
@@ -89,6 +92,7 @@ class CommentItem extends React.Component {
         <div className="comment-item-body"> 
           <img className="comment-author-img" src={this.props.comment.author_img_url} /> 
           {editForm}
+          
         </div>
       </div>
     );

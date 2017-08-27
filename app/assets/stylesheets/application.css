@@ -353,6 +353,10 @@ form button:hover {
 
 /* COMMENT FORM */
 
+.comment-item-text {
+
+}
+
 .comment-form-input {
   width: 500px;
   height: 100px;
