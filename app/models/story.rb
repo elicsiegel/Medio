@@ -1,8 +1,8 @@
 class Story < ActiveRecord::Base 
   validates :title, :body, :author_id, presence: true
 
-  has_many :comments
-  has_many :likes 
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy 
 
   has_many :likers,
     through: :likes,

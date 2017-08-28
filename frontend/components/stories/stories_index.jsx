@@ -10,7 +10,6 @@ class StoriesIndex extends React.Component {
 
   render() {
     const {stories} = this.props;
-    // debugger
     const storyItems = stories.map((story) => {
       return <StoriesIndexItem story={story} key={`story-index-key${story.id}`}/>
     });

@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   has_many :liked_stories,
     through: :likes,
@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
 
   has_many :follows,
     foreign_key: :followee_id,
-    class_name: :Follow
+    class_name: :Follow,
+    dependent: :destroy
 
   has_many :followers,
     through: :follows,
@@ -23,7 +24,8 @@ class User < ActiveRecord::Base
 
   has_many :following,
     foreign_key: :follower_id,
-    class_name: :Follow
+    class_name: :Follow,
+    dependent: :destroy
 
   has_many :followees,
     through: :following,

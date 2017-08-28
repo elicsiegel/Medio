@@ -80,9 +80,9 @@ class StoryDetail extends React.Component {
           editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
         }
         if (this.props.currentUser.followee_ids.includes(author.id)) {
-          followButton = <button onClick={this.unfollowAuthor}>UNFOLLOW</button>
+          followButton = <button onClick={this.unfollowAuthor}>Unfollow</button>
         } else {
-          followButton = <button onClick={this.followAuthor}>FOLLOW</button>
+          followButton = <button onClick={this.followAuthor}>Follow</button>
         } 
         if (liker_ids.includes(this.props.currentUser.id)) {
           likeButton = <button id="like-button" onClick={this.removeLike}><img id="full-heart-img" src={window.staticImages.fullHeart}/></button>
