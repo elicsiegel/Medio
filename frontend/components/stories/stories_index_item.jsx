@@ -17,7 +17,7 @@ class StoriesIndexItem extends React.Component {
   }
 
   render() {
-    const formBody = this.props.story.body.slice(0, 100) 
+    const formBody = this.props.story.body.slice(0, 100); 
     const link = `/stories/${this.props.story.id}`
     return (
       <Link to={link} className="stories-index-item-link">

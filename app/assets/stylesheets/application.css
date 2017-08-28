@@ -148,11 +148,34 @@ body {
 }
 
 .story-info > * {
-  padding: 5px;
+  margin: 10px;
+}
+
+.like-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.like-div p {
+  margin: 0px;
 }
 
 #author-image {
   max-width: 70px; 
+}
+
+#like-button {
+  border: none;
+  background: none;
+}
+
+#full-heart-img {
+  width: 15px;
+}
+
+#empty-heart-img {
+  width: 15px;
 }
 
 .story-detail-body {

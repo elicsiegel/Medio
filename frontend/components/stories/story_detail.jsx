@@ -85,9 +85,9 @@ class StoryDetail extends React.Component {
           followButton = <button onClick={this.followAuthor}>FOLLOW</button>
         } 
         if (liker_ids.includes(this.props.currentUser.id)) {
-          likeButton = <button onClick={this.removeLike}>UNLIKE</button>
+          likeButton = <button id="like-button" onClick={this.removeLike}><img id="full-heart-img" src={window.staticImages.fullHeart}/></button>
         } else {
-          likeButton = <button onClick={this.addLike}>LIKE</button>
+          likeButton = <button id="like-button" onClick={this.addLike}><img id="empty-heart-img" src={window.staticImages.emptyHeart}/></button>
         }
       }
       
@@ -104,10 +104,12 @@ class StoryDetail extends React.Component {
             <h4>{author.username}</h4> 
             <p>{this.stylizeDate(created_at)}</p>
             {followButton}
+            <div className="like-div">
+              <p>{num_likes}</p>
+              {likeButton}
+            </div>
           </div>
           <h1>{title}</h1>
-          <p>Likes: {num_likes}</p>
-          {likeButton}
           <img className="story-detail-img" src={story_img_url} />
           <section className="story-detail-body">
             {renderHTML(body)}

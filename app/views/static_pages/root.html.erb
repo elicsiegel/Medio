@@ -1,3 +1,10 @@
+<script>
+  window.staticImages = {
+    emptyHeart: "<%= asset_path('empty-heart.png')%>",
+    fullHeart: "<%= asset_path('full-heart.png')%>"
+  }
+</script>
+
 <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render(
