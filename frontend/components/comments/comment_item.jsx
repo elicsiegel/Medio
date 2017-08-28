@@ -63,7 +63,7 @@ class CommentItem extends React.Component {
     let deleteButton;
     let editButton;
     let editForm;
-    
+
     if (this.props.currentUser) {
       if (this.props.comment.author_id === this.props.currentUser.id) {
         deleteButton = <button onClick={this.handleDelete}>Delete Comment</button>
@@ -85,14 +85,19 @@ class CommentItem extends React.Component {
 
     return (
       <div className="comment-item">
-        <div className="comment-item-modifiers">
-          {deleteButton}
-          {editButton}
+        <div className="comment-header">
+          <div className="comment-author-info">
+            <img className="comment-author-img" src={this.props.comment.author_img_url} /> 
+            <h4>{this.props.comment.author.username}</h4>
+            <p>{this.stylizeDate(this.props.comment.created_at)}</p>
+          </div>
+          <div className="comment-modifiers">
+            {deleteButton}
+            {editButton}
+          </div>
         </div>
         <div className="comment-item-body"> 
-          <img className="comment-author-img" src={this.props.comment.author_img_url} /> 
-          {editForm}
-          
+          {editForm}    
         </div>
       </div>
     );
