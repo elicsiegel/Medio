@@ -89,6 +89,8 @@ class StoryDetail extends React.Component {
         } else {
           likeButton = <button id="like-button" onClick={this.addLike}><img id="empty-heart-img" src={window.staticImages.emptyHeart}/></button>
         }
+      } else {
+        likeButton = <button id="like-button"><img id="full-heart-img" src={window.staticImages.fullHeart}/></button>
       }
       
       return (
