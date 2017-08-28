@@ -7,6 +7,22 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+  has_many :follows,
+    foreign_key: :followee_id,
+    class_name: :Follow
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+  has_many :following,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+  has_many :followees,
+    through: :following,
+    source: :followee 
+
   has_attached_file :image, default_url: "default_user.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 

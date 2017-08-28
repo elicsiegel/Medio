@@ -7,24 +7,32 @@ class StoryDetail extends React.Component {
   constructor(props) {
     super(props)
     this.handleDelete = this.handleDelete.bind(this);
+    this.followAuthor = this.followAuthor.bind(this);
+    this.unfollowAuthor = this.unfollowAuthor.bind(this);
   }
 
   componentDidMount() {
     if (this.props.match.url !== '/stories/new') {
       if (this.props.story === undefined) {
-        // debugger
         this.props.fetchStory(this.props.match.params.storyId);   
       }
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    
-      if (newProps.story === undefined) {
-        // debugger
-        this.props.fetchStory(newProps.match.params.storyId);
-      }
-      
+  componentWillReceiveProps(newProps) { 
+    if (newProps.story === undefined) {
+      this.props.fetchStory(newProps.match.params.storyId);
+    }    
+  }
+
+  followAuthor() {
+    const follow = {follower_id: this.props.currentUser.id, followee_id: this.props.story.author.id}
+    this.props.createFollow(follow); 
+  }
+
+  unfollowAuthor() {
+    const follow = {follower_id: this.props.currentUser.id, followee_id: this.props.story.author.id}
+    this.props.deleteFollow(follow)
   }
 
   handleDelete() {
@@ -53,12 +61,18 @@ class StoryDetail extends React.Component {
       const { title, body, author, created_at, id, author_img_url, story_img_url } = this.props.story;
 
       let editLink;
-      let deleteButton; 
+      let deleteButton;
+      let followButton 
       if (this.props.currentUser) {
         if (author.id === this.props.currentUser.id) {
           deleteButton = <button onClick={this.handleDelete}>Delete</button>
           editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
-        }   
+        }
+        if (this.props.currentUser.followee_ids.includes(author.id)) {
+          followButton = <button onClick={this.unfollowAuthor}>UNFOLLOW</button>
+        } else {
+          followButton = <button onClick={this.followAuthor}>FOLLOW</button>
+        }  
       }
       
       return (
@@ -73,6 +87,7 @@ class StoryDetail extends React.Component {
             </div>
             <h4>{author.username}</h4> 
             <p>{this.stylizeDate(created_at)}</p>
+            {followButton}
           </div>
           <h1>{title}</h1>
           <img className="story-detail-img" src={story_img_url} />

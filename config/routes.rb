@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:destroy, :update]
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
+
+    post "users/:id/follow", to: "users#follow"
+    post "users/:id/unfollow", to: "users#unfollow"
   end
 end
