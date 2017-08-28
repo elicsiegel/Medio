@@ -389,6 +389,11 @@ form button:hover {
   width: 20px;
 }
 
+.comment-body-input {
+  width: 500px;
+  height: 50px;
+}
+
 .comment-header {
   display: flex; 
   align-items: center;
@@ -403,6 +408,10 @@ form button:hover {
 .comment-author-info {
   display: flex; 
   align-items: center;
+}
+
+.comment-author-info p{
+  color: gray;
 }
 
 .comment-author-info > * {

@@ -72,8 +72,8 @@ class CommentItem extends React.Component {
       if (this.editStatus) { 
         editForm = (
             <form onSubmit={this.handleUpdate}>
-              <input className="input-title" value={this.state.body} onChange={this.update('body')} required/>
-              <button className="publish-button">Update Comment</button>
+              <input className="comment-body-input" value={this.state.body} onChange={this.update('body')} required/>
+              <button className="publish-button">Update</button>
             </form>
           ); 
       } 
