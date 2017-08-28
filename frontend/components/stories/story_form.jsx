@@ -11,6 +11,7 @@ class StoryForm extends React.Component {
     this.state = {
       title: "",
       body: "",
+      category: "General",
       author_id: this.props.currentUser.id
     };
 
@@ -18,10 +19,15 @@ class StoryForm extends React.Component {
     this.deleteImage = this.deleteImage.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
   }
 
   handleChange(value) {
     this.setState({body: value});
+  }
+
+  handleCategoryChange(event) {
+    this.setState({category: event.target.value});
   }
 
   update(property) {
@@ -68,6 +74,7 @@ class StoryForm extends React.Component {
     formData.append("story[title]", this.state.title);
     formData.append("story[body]", this.state.body);
     formData.append("story[author_id]", this.state.author_id);
+    formData.append("story[category]", this.state.category);
 
     if (this.state.imageFile !== undefined) {
         formData.append("story[image]", this.state.imageFile);
@@ -110,6 +117,14 @@ class StoryForm extends React.Component {
               <p id="upload-image-p">Drop file here or click to upload Story Photo</p>
             </Dropzone>
           </div>
+          <label>
+            Pick your category:
+            <select value={this.state.category} onChange={this.handleCategoryChange}>
+              <option value="General">General</option>
+              <option value="Art">Art</option>
+              <option value="Science">Science</option>
+            </select>
+          </label>
           <input
             className="input-title"
             ref="title"
