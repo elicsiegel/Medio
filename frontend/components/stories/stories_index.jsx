@@ -1,6 +1,7 @@
 import React from 'react';
 import StoriesIndexItem from './stories_index_item';
 
+
 class StoriesIndex extends React.Component {
   componentDidMount() {
     // request stories from the API 

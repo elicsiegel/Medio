@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentsContainer from '../comments/comments_container';
+import renderHTML from 'react-render-html';
 
 class StoryDetail extends React.Component {
 
@@ -109,7 +110,7 @@ class StoryDetail extends React.Component {
           {likeButton}
           <img className="story-detail-img" src={story_img_url} />
           <section className="story-detail-body">
-            <p>{body}</p>
+            {renderHTML(body)}
           </section>
           <div className="comment-list">
             <CommentsContainer story={this.props.story}/>

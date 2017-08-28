@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import renderHTML from 'react-render-html';
 
 class StoriesIndexItem extends React.Component {
 
@@ -16,7 +17,7 @@ class StoriesIndexItem extends React.Component {
   }
 
   render() {
-    const formBody = this.props.story.body.slice(0, 100) + "..."
+    const formBody = this.props.story.body.slice(0, 100) 
     const link = `/stories/${this.props.story.id}`
     return (
       <Link to={link} className="stories-index-item-link">
@@ -26,7 +27,7 @@ class StoriesIndexItem extends React.Component {
           </div>
           <div className="index-title-body">
             <h4>{this.props.story.title}</h4>
-            <p>{formBody}</p>
+            {renderHTML(formBody)}
             <div className="author-info-index">
               <div className="author-index-image-div">
                 <img className="author-index-image" src={this.props.story.author_img_url} />

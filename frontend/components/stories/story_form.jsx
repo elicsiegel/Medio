@@ -1,6 +1,8 @@
 import React from 'react'; 
 import { Redirect } from 'react-router-dom'; 
 import Dropzone from 'react-dropzone';
+import ReactQuill from 'react-quill';
+
 
 class StoryForm extends React.Component {
 
@@ -15,6 +17,11 @@ class StoryForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.deleteImage = this.deleteImage.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(value) {
+    this.setState({body: value});
   }
 
   update(property) {
@@ -110,15 +117,7 @@ class StoryForm extends React.Component {
             placeholder="Title"
             onChange={this.update('title')}
             required/>
-          <textarea
-            className="input-body"
-            ref="body"
-            cols='20'
-            value={this.state.body}
-            rows='5'
-            placeholder="Tell your story..."
-            onChange={this.update('body')}
-            required></textarea>
+          <ReactQuill placeholder="Body (double click on text to add formatting)" className="input-body" theme="bubble" value={this.state.body} onChange={this.handleChange}/>
           <button className="publish-button">Publish</button>
         </form>
       </div> 

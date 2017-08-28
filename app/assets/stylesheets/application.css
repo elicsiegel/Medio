@@ -175,6 +175,8 @@ body {
   align-items: center;
 }
 
+
+
 .story-form form {
   align-items: flex-end;
 }
@@ -207,7 +209,8 @@ body {
 
 .story-form .input-body {
   width: 800px;
-  height: 200px;
+  font-size: 50px;
+  
 }
 
 #upload-image-p {
