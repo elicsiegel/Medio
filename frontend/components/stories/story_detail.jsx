@@ -9,6 +9,8 @@ class StoryDetail extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.followAuthor = this.followAuthor.bind(this);
     this.unfollowAuthor = this.unfollowAuthor.bind(this);
+    this.addLike = this.addLike.bind(this);
+    this.removeLike = this.removeLike.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +25,14 @@ class StoryDetail extends React.Component {
     if (newProps.story === undefined) {
       this.props.fetchStory(newProps.match.params.storyId);
     }    
+  }
+
+  addLike() {
+    this.props.addStoryLike(this.props.story)
+  }
+
+  removeLike() {
+    this.props.deleteStoryLike(this.props.story)
   }
 
   followAuthor() {
@@ -57,11 +67,12 @@ class StoryDetail extends React.Component {
 
   render() {
     if (this.props.story && this.props.match.url !== '/stories/new') {
-      const { title, body, author, created_at, id, author_img_url, story_img_url, num_likes } = this.props.story;
+      const { title, body, author, created_at, id, author_img_url, story_img_url, num_likes, liker_ids } = this.props.story;
 
       let editLink;
       let deleteButton;
-      let followButton 
+      let followButton;
+      let likeButton;  
       if (this.props.currentUser) {
         if (author.id === this.props.currentUser.id) {
           deleteButton = <button onClick={this.handleDelete}>Delete</button>
@@ -71,7 +82,12 @@ class StoryDetail extends React.Component {
           followButton = <button onClick={this.unfollowAuthor}>UNFOLLOW</button>
         } else {
           followButton = <button onClick={this.followAuthor}>FOLLOW</button>
-        }  
+        } 
+        if (liker_ids.includes(this.props.currentUser.id)) {
+          likeButton = <button onClick={this.removeLike}>UNLIKE</button>
+        } else {
+          likeButton = <button onClick={this.addLike}>LIKE</button>
+        }
       }
       
       return (
@@ -90,6 +106,7 @@ class StoryDetail extends React.Component {
           </div>
           <h1>{title}</h1>
           <p>Likes: {num_likes}</p>
+          {likeButton}
           <img className="story-detail-img" src={story_img_url} />
           <section className="story-detail-body">
             <p>{body}</p>

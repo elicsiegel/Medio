@@ -8,6 +8,7 @@ json.story do
     json.author_img_url asset_path(@story.author.image.url)
     json.comment_ids @story.comment_ids
     json.num_likes @story.likes.count
+    json.liker_ids @story.liker_ids
 
     json.created_at @story.created_at
   end

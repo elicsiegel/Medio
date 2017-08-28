@@ -42,3 +42,19 @@ export const destroyStory = story => (
     url: `api/stories/${story.id}`
   })
 );
+
+export const addStoryLike = story => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/likes/${story.id}`,
+    data: story,
+  })
+}
+
+export const removeStoryLike = story => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/likes/${story.id}`,
+    data: story,
+  })
+}

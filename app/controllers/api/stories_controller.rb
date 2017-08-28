@@ -38,6 +38,28 @@ class Api::StoriesController < ApplicationController
     end
   end 
 
+  def add_like
+    @story = Story.find(params[:id])
+    new_like = Like.new(story_id: @story.id, user_id: current_user.id)
+
+    if new_like.save 
+      render :show
+    else 
+      render json: like.errors.full_messages, status: 422
+    end 
+  end
+
+  def remove_like
+    @story = Story.find(params[:id])
+    like_to_delete = Like.where(story_id: @story.id, user_id: current_user.id)[0]
+    
+    if like_to_delete.destroy 
+      render :show
+    else 
+      render json: like_to_delete.errors.full_messages
+    end 
+  end
+
   private 
 
   def story_params

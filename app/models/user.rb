@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   has_many :likes
 
+  has_many :liked_stories,
+    through: :likes,
+    source: :story
+
   has_many :follows,
     foreign_key: :followee_id,
     class_name: :Follow

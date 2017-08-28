@@ -45,7 +45,5 @@
   bring count of likes with story, bring in key on jbuilder if liked by current user  
   post and delete likes from stories controller 
   
-- `GET /api/likes/:userId`: get all likes for a user
-- `GET /api/likes/:storyId`: get all likes for a post
 - `POST /api/likes`
 - `DELETE /api/likes/id`

@@ -35,6 +35,14 @@ export const createStory = story => dispatch => {
   .then(story => dispatch(receiveStory(story)))
 };
 
+export const addStoryLike = story => dispatch => (
+  APIUtil.addStoryLike(story).then(story => dispatch(receiveStory(story)))
+);
+
+export const deleteStoryLike = story => dispatch => (
+  APIUtil.removeStoryLike(story).then(story => dispatch(receiveStory(story)))
+);
+
 export const updateStory = story => dispatch => (
   APIUtil.updateStory(story).then(story => dispatch(receiveStory(story)))
 );
