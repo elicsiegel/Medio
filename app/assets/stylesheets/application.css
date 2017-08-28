@@ -410,6 +410,16 @@ form button:hover {
   padding-right: 20px;
 }
 
+.comment-modifiers button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.comment-modifiers button:hover {
+  color: lightgreen;
+}
+
 /* COMMENT ITEM */
 
 .comment-author-img {

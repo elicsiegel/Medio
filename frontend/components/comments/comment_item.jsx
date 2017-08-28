@@ -66,8 +66,8 @@ class CommentItem extends React.Component {
 
     if (this.props.currentUser) {
       if (this.props.comment.author_id === this.props.currentUser.id) {
-        deleteButton = <button onClick={this.handleDelete}>Delete Comment</button>
-        editButton = <button onClick={this.handleEdit}>Edit Comment</button>
+        deleteButton = <button onClick={this.handleDelete}>Delete</button>
+        editButton = <button onClick={this.handleEdit}>Edit</button>
       }
       if (this.editStatus) { 
         editForm = (

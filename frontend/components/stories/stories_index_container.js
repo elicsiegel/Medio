@@ -5,7 +5,8 @@ import { allStories } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    stories: allStories(state)
+    stories: allStories(state),
+    currentUser: state.session.currentUser,
   };
 };
 
