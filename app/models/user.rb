@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+  has_many :likes
+
   has_many :follows,
     foreign_key: :followee_id,
     class_name: :Follow

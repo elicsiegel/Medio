@@ -56,9 +56,8 @@ class StoryDetail extends React.Component {
   }
 
   render() {
-    // debugger
     if (this.props.story && this.props.match.url !== '/stories/new') {
-      const { title, body, author, created_at, id, author_img_url, story_img_url } = this.props.story;
+      const { title, body, author, created_at, id, author_img_url, story_img_url, num_likes } = this.props.story;
 
       let editLink;
       let deleteButton;
@@ -90,6 +89,7 @@ class StoryDetail extends React.Component {
             {followButton}
           </div>
           <h1>{title}</h1>
+          <p>Likes: {num_likes}</p>
           <img className="story-detail-img" src={story_img_url} />
           <section className="story-detail-body">
             <p>{body}</p>
