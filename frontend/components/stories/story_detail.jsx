@@ -23,7 +23,6 @@ class StoryDetail extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    //this needs to also change story in props so comment goes to right story 
     if (newProps.story === undefined) {
       this.props.fetchStory(newProps.match.params.storyId)
     }    
@@ -83,7 +82,7 @@ class StoryDetail extends React.Component {
         if (this.props.currentUser.followee_ids.includes(author.id)) {
           followButton = <button onClick={this.unfollowAuthor}>Unfollow</button>
         } else {
-          followButton = <button onClick={this.followAuthor}>Follow</button>
+          followButton = <button className='follow' onClick={this.followAuthor}>Follow</button>
         } 
         if (liker_ids.includes(this.props.currentUser.id)) {
           likeButton = <button id="like-button" onClick={this.removeLike}><img id="full-heart-img" src={window.staticImages.fullHeart}/></button>

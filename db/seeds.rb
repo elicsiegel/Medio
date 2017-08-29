@@ -9,13 +9,47 @@
 User.destroy_all 
 
 user1 = User.create!(username: "Eli", password: "password") 
+
+file = File.open('app/assets/images/88.jpg')
+user1.image = file
+user1.save!
+
 user2 = User.create!(username: "Jim", password: "password") 
+
+file = File.open('app/assets/images/58.jpg')
+user2.image = file
+user2.save!
+
 user3 = User.create!(username: "Davis", password: "password") 
-user4 = User.create!(username: "Michelle", password: "password") 
-user5 = User.create!(username: "Freddy", password: "password") 
+
+file = File.open('app/assets/images/40.jpg')
+user3.image = file
+user3.save!
+
+user4 = User.create!(username: "Michelle", password: "password")
+
+file = File.open('app/assets/images/43.jpg')
+user4.image = file
+user4.save! 
+
+user5 = User.create!(username: "Rachel", password: "password") 
+
+file = File.open('app/assets/images/26.jpg')
+user5.image = file
+user5.save!
+
 user6 = User.create!(username: "Betty", password: "password") 
+
+file = File.open('app/assets/images/21.jpg')
+user6.image = file
+user6.save!
+
 user7 = User.create!(username: "Guest", password: "password")
 user8 = User.create!(username: "Gabby", password: "password")
+
+file = File.open('app/assets/images/71.jpg')
+user8.image = file
+user8.save!
 
 Story.destroy_all
 

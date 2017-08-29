@@ -18,8 +18,9 @@ class StoriesIndex extends React.Component {
         .map((story) => {
           return <StoriesIndexItem story={story} key={`story-follower-key${story.id}`}/>
         });
-
-      followerStoriesTitle = <h4>Stories by People You are Following</h4>
+      if (this.props.currentUser.followee_ids.length >= 1) {
+        followerStoriesTitle = <h4>Stories by People You are Following</h4>
+      }
     }
 
     const generalStories = stories.filter((story) => story.category === "General").map((story) => {
