@@ -89,6 +89,15 @@ body {
   padding-left: 15%;
 }
 
+.stories-index-username {
+  color: black;
+}
+
+.stories-index-date {
+  font-size: 12px;
+  color: gray;
+}
+
 .index-title-body {
   min-width: 50%;
   background: white;
@@ -109,7 +118,9 @@ body {
 }
 
 .author-index-image {
-  max-width: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
 }
 
 .author-index-image-div {
@@ -170,7 +181,9 @@ body {
 }
 
 #author-image {
-  max-width: 70px; 
+  width: 70px;
+  height: 70px;
+  border-radius: 100px; 
 }
 
 #like-button {
@@ -197,6 +210,15 @@ body {
 
 #modify-own-story > *{
   padding: 7px;
+  font-size: 15px;
+  color: blue;
+  text-decoration: none;
+}
+
+#modify-own-story button {
+  border: none;
+  background: none;
+  font-family: 'lato';
 }
 
 /* STORY FORM */
@@ -239,6 +261,19 @@ body {
   font-size: xx-large;
 }
 
+.story-form .input-title::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: gray;
+}
+.story-form .input-title::-moz-placeholder { /* Firefox 19+ */
+  color: gray;
+}
+.story-form .input-title:-ms-input-placeholder { /* IE 10+ */
+  color: gray;
+}
+.story-form .input-title:-moz-placeholder { /* Firefox 18- */
+  color: gray;
+}
+
 .story-form .input-body {
   width: 800px;
   font-size: 50px;
@@ -246,7 +281,7 @@ body {
 }
 
 #upload-image-p {
-  border: dotted;
+  border: 1px solid black;
   padding: 10px;
   font-size: 10px;
 }
@@ -432,7 +467,9 @@ form button:hover {
 /* COMMENT ITEM */
 
 .comment-author-img {
-  width: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
 }
 
 .comment-body-input {

@@ -118,7 +118,7 @@ class StoryForm extends React.Component {
             </Dropzone>
           </div>
           <label>
-            Pick your category:
+            Pick a category:
             <select value={this.state.category} onChange={this.handleCategoryChange}>
               <option value="General">General</option>
               <option value="Art">Art</option>
@@ -132,7 +132,7 @@ class StoryForm extends React.Component {
             placeholder="Title"
             onChange={this.update('title')}
             required/>
-          <ReactQuill placeholder="Body (double click on text to add formatting)" className="input-body" theme="bubble" value={this.state.body} onChange={this.handleChange}/>
+          <ReactQuill placeholder={"Body (double click on text to add formatting)"} className="input-body" theme="bubble" value={this.state.body} onChange={this.handleChange}/>
           <button className="publish-button">Publish</button>
         </form>
       </div> 

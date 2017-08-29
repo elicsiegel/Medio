@@ -6,8 +6,9 @@
  */
 .ql-container {
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
   height: 100%;
   margin: 0px;
   position: relative;
@@ -351,10 +352,10 @@
   color: #93f;
 }
 .ql-editor .ql-font-serif {
-  font-family: Georgia, Times New Roman, serif;
+  font-family: font-family: 'Lato', sans-serif;
 }
 .ql-editor .ql-font-monospace {
-  font-family: Monaco, Courier New, monospace;
+  font-family: font-family: 'Lato', sans-serif;
 }
 .ql-editor .ql-size-small {
   font-size: 0.75em;
@@ -381,7 +382,9 @@
 .ql-editor.ql-blank::before {
   color: rgba(0,0,0,0.6);
   content: attr(data-placeholder);
-  font-style: italic;
+  color: gray;
+  font-weight: bold;
+  font-size: xx-large;
   pointer-events: none;
   position: absolute;
 }
@@ -792,10 +795,10 @@
   content: 'Monospace';
 }
 .ql-bubble .ql-picker.ql-font .ql-picker-item[data-value=serif]::before {
-  font-family: Georgia, Times New Roman, serif;
+  font-family: font-family: 'Lato', sans-serif;
 }
 .ql-bubble .ql-picker.ql-font .ql-picker-item[data-value=monospace]::before {
-  font-family: Monaco, Courier New, monospace;
+  font-family: font-family: 'Lato', sans-serif;
 }
 .ql-bubble .ql-picker.ql-size {
   width: 98px;

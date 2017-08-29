@@ -32,8 +32,8 @@ class StoriesIndexItem extends React.Component {
               <div className="author-index-image-div">
                 <img className="author-index-image" src={this.props.story.author_img_url} />
               </div>
-              <p>{this.props.story.author.username}</p>
-              <p>{this.stylizeDate(this.props.story.created_at)}</p>
+              <p className="stories-index-username">{this.props.story.author.username}</p>
+              <p className="stories-index-date">{this.stylizeDate(this.props.story.created_at)}</p>
             </div>
           </div>
         </div>
