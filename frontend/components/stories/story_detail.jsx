@@ -143,8 +143,9 @@ class StoryDetail extends React.Component {
     }
 
     return (
-      <div>Loading...</div>
+      <div></div>
     );
+
   }
 }
 
