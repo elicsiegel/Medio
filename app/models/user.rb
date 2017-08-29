@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+  has_many :bookmarks
+
+  has_many :bookmarked_stories,
+    through: :bookmarks,
+    source: :story
+    
   has_many :likes
 
   has_many :liked_stories,

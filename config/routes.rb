@@ -14,5 +14,8 @@ Rails.application.routes.draw do
 
     post "likes/:id", to: "stories#add_like"
     delete "likes/:id", to: "stories#remove_like"
+
+    post "bookmarks/:storyId", to: "users#add_bookmark"
+    delete "bookmarks/:storyId", to: "users#remove_bookmark"
   end
 end

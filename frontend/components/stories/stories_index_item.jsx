@@ -4,6 +4,12 @@ import renderHTML from 'react-render-html';
 
 class StoriesIndexItem extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.addBookmark = this.addBookmark.bind(this);
+    this.removeBookmark = this.removeBookmark.bind(this);
+  }
+
   stylizeDate(created_at) {
     const date = new Date(created_at);
 
@@ -16,7 +22,27 @@ class StoriesIndexItem extends React.Component {
     return `${months[month]} ${dayOfMonth}`;
   }
 
+  removeBookmark(e) {
+    e.preventDefault(); 
+    this.props.deleteBookmark({story_id: this.props.story.id})
+  }
+
+  addBookmark(e) {
+    e.preventDefault();
+    this.props.createBookmark({story_id: this.props.story.id, user_id: this.props.currentUser.id})
+  }
+
   render() {
+    let bookmarkButton; 
+    
+    if (this.props.currentUser) {
+      if (this.props.currentUser.bookmarked_story_ids.includes(this.props.story.id)) {
+        bookmarkButton = <button onClick={this.removeBookmark}>Remove Bookmark</button>
+      } else {
+        bookmarkButton = <button onClick={this.addBookmark}>Add Bookmark</button>
+      }
+    }
+
     const formBody = this.props.story.body.slice(0, 100); 
     const link = `/stories/${this.props.story.id}`
     return (
@@ -34,6 +60,7 @@ class StoriesIndexItem extends React.Component {
               </div>
               <p className="stories-index-username">{this.props.story.author.username}</p>
               <p className="stories-index-date">{this.stylizeDate(this.props.story.created_at)}</p>
+              {bookmarkButton}
             </div>
           </div>
         </div>

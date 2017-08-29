@@ -11,6 +11,26 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def add_bookmark
+    @user = current_user 
+
+    bookmark = Bookmark.new(bookmark_params)
+
+    if bookmark.save 
+      render :show
+    else 
+      render json: bookmark.errors.full_messages
+    end 
+  end 
+
+  def remove_bookmark
+    @user = current_user
+
+    bookmark = Bookmark.where(story_id: params[:bookmark][:story_id].to_i, user_id: @user.id)[0]
+    Bookmark.destroy(bookmark.id)
+    render :show
+  end 
+
   def follow
     @user = User.find(params[:id])
 
@@ -38,6 +58,10 @@ class Api::UsersController < ApplicationController
   
   def follow_params
     params.require(:follow).permit(:followee_id, :follower_id)
+  end 
+
+  def bookmark_params
+    params.require(:bookmark).permit(:story_id, :user_id)
   end 
   
 end

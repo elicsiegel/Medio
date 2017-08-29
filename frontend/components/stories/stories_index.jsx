@@ -8,15 +8,14 @@ class StoriesIndex extends React.Component {
     this.props.fetchStories(); 
   }
 
-  filterByCategory(stories, category) {
+  filterByCategory(stories, category, currentUser, createBookmark, deleteBookmark) {
     return stories.filter((story) => story.category === category).map((story) => {
-      return <StoriesIndexItem story={story} key={`story-category-key${story.id}`}/>
+      return <StoriesIndexItem createBookmark={createBookmark} deleteBookmark={deleteBookmark} currentUser={currentUser} story={story} key={`story-category-key${story.id}`}/>
     });
   }
 
   render() {
-    const {stories, currentUser} = this.props;
-
+    const {stories, currentUser, createBookmark, deleteBookmark} = this.props;
     let followerStoriesTitle;
     let followerStories;
     let followerStoriesDiv; 
@@ -25,7 +24,8 @@ class StoriesIndex extends React.Component {
 
       followerStories = stories.filter((story) => this.props.currentUser.followee_ids.includes(story.author.id))
         .map((story) => {
-          return <StoriesIndexItem story={story} key={`story-follower-key${story.id}`}/>
+          return <StoriesIndexItem createBookmark={createBookmark} deleteBookmark={deleteBookmark}
+                    currentUser={currentUser} story={story} key={`story-follower-key${story.id}`}/>
         });
 
       followerStoriesDiv = <div id="followedStoriesContainer" className="storiesIndexContainer">{followerStories}</div>
@@ -36,9 +36,9 @@ class StoriesIndex extends React.Component {
     }
 
     
-    const generalStories = this.filterByCategory(stories, "General");
-    const artStories = this.filterByCategory(stories, "Art");
-    const scienceStories = this.filterByCategory(stories, "Science");
+    const generalStories = this.filterByCategory(stories, "General", currentUser, createBookmark, deleteBookmark);
+    const artStories = this.filterByCategory(stories, "Art", currentUser, createBookmark, deleteBookmark);
+    const scienceStories = this.filterByCategory(stories, "Science", currentUser, createBookmark, deleteBookmark);
 
     return (
       <div>

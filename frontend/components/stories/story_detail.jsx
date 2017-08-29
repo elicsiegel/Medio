@@ -12,6 +12,8 @@ class StoryDetail extends React.Component {
     this.unfollowAuthor = this.unfollowAuthor.bind(this);
     this.addLike = this.addLike.bind(this);
     this.removeLike = this.removeLike.bind(this);
+    this.addBookmark = this.addBookmark.bind(this);
+    this.removeBookmark = this.removeBookmark.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +48,16 @@ class StoryDetail extends React.Component {
     this.props.deleteFollow(follow)
   }
 
+  removeBookmark(e) {
+    e.preventDefault(); 
+    this.props.deleteBookmark({story_id: this.props.story.id})
+  }
+
+  addBookmark(e) {
+    e.preventDefault();
+    this.props.createBookmark({story_id: this.props.story.id, user_id: this.props.currentUser.id})
+  }
+
   handleDelete() {
     this.props.deleteStory(this.props.story).then(() => {
       this.props.history.push("/"); 
@@ -74,7 +86,13 @@ class StoryDetail extends React.Component {
       let deleteButton;
       let followButton;
       let likeButton;  
+      let bookmarkButton; 
       if (this.props.currentUser) {
+        if (this.props.currentUser.bookmarked_story_ids.includes(this.props.story.id)) {
+          bookmarkButton = <button onClick={this.removeBookmark}>Remove Bookmark</button>
+        } else {
+          bookmarkButton = <button onClick={this.addBookmark}>Add Bookmark</button>
+        }
         if (author.id === this.props.currentUser.id) {
           deleteButton = <button onClick={this.handleDelete}>Delete</button>
           editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
@@ -110,6 +128,7 @@ class StoryDetail extends React.Component {
               <p>{num_likes}</p>
               {likeButton}
             </div>
+            {bookmarkButton}
           </div>
           <h1>{title}</h1>
           <img className="story-detail-img" src={story_img_url} />
@@ -124,7 +143,7 @@ class StoryDetail extends React.Component {
     }
 
     return (
-      <div></div>
+      <div>Loading...</div>
     );
   }
 }

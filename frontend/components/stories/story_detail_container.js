@@ -3,6 +3,7 @@ import StoryDetail from './story_detail';
 import { allStories } from '../../reducers/selectors';
 import { fetchStory, deleteStory, addStoryLike, deleteStoryLike } from '../../actions/story_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
+import { createBookmark, deleteBookmark } from '../../actions/bookmark_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -15,7 +16,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (follow) => dispatch(deleteFollow(follow)), 
+    deleteFollow: (follow) => dispatch(deleteFollow(follow)),
+    createBookmark: (bookmark) => dispatch(createBookmark(bookmark)), 
+    deleteBookmark: (bookmark) => dispatch(deleteBookmark(bookmark)), 
     addStoryLike: (story) => dispatch(addStoryLike(story)),
     deleteStoryLike: (story) => dispatch(deleteStoryLike(story)),
     deleteStory: (story) => dispatch(deleteStory(story)), 
