@@ -22,8 +22,14 @@ class CommentForm extends React.Component {
     
   }
 
+  componentDidUpdate() {
+    if(this.props.story.id !== this.state.story_id) {
+      this.setState({story_id: this.props.story.id})
+    }
+  }
+
   update(property) {
-    return e => this.setState({[property]: e.target.value, story_id: this.props.story.id});
+    return e => this.setState({[property]: e.target.value});
   }
 
   render() {
