@@ -51,6 +51,10 @@ body {
   margin: 5px;
 }
 
+.nav-user-welcome a {
+  margin: 5px;
+}
+
 .nav-user-welcome button {
   margin: 5px;
   outline: none;

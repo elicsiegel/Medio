@@ -98,7 +98,7 @@ class StoryDetail extends React.Component {
           editLink = <Link to={`/stories/${id}/edit`}>Edit Story</Link>
         }
         if (this.props.currentUser.followee_ids.includes(author.id)) {
-          followButton = <button onClick={this.unfollowAuthor}>Unfollow</button>
+          followButton = <button className='follow' onClick={this.unfollowAuthor}>Unfollow</button>
         } else {
           followButton = <button className='follow' onClick={this.followAuthor}>Follow</button>
         } 

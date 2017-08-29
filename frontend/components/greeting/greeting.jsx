@@ -8,6 +8,7 @@ const Greeting = ({logout, currentUser}) => {
     return(
       <div className='nav-user-welcome'>
         {createStoryLink}
+        <Link to='/bookmarks'>Bookmarks</Link>
         <h3>Welcome, {currentUser.username}!</h3>
         <button onClick={logout}>Log Out</button>
       </div>
