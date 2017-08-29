@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :comments, dependent: :destroy
+  has_many :comments
 
-  has_many :likes, dependent: :destroy
+  has_many :likes
 
   has_many :liked_stories,
     through: :likes,
