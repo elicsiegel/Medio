@@ -13,9 +13,9 @@ class CommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   handleSubmit(e) {
     e.preventDefault(); 
+    
     this.props.createComment(this.state).then(() => { 
         this.setState({body: ""})
     }); 
@@ -23,7 +23,7 @@ class CommentForm extends React.Component {
   }
 
   update(property) {
-    return e => this.setState({[property]: e.target.value});
+    return e => this.setState({[property]: e.target.value, story_id: this.props.story.id});
   }
 
   render() {

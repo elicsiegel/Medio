@@ -22,9 +22,10 @@ class StoryDetail extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) { 
+  componentWillReceiveProps(newProps) {
+    //this needs to also change story in props so comment goes to right story 
     if (newProps.story === undefined) {
-      this.props.fetchStory(newProps.match.params.storyId);
+      this.props.fetchStory(newProps.match.params.storyId)
     }    
   }
 
