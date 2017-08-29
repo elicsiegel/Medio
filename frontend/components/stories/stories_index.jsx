@@ -13,13 +13,19 @@ class StoriesIndex extends React.Component {
 
     let followerStoriesTitle;
     let followerStories;
+    let followerStoriesDiv; 
+
     if (this.props.currentUser) {
+
       followerStories = stories.filter((story) => this.props.currentUser.followee_ids.includes(story.author.id))
         .map((story) => {
           return <StoriesIndexItem story={story} key={`story-follower-key${story.id}`}/>
         });
+
+      followerStoriesDiv = <div id="followedStoriesContainer" className="storiesIndexContainer">{followerStories}</div>
+
       if (this.props.currentUser.followee_ids.length >= 1) {
-        followerStoriesTitle = <h4>Stories by People You are Following</h4>
+        followerStoriesTitle = <div className="storiesIndexTitle"><h4>Stories by People You are Following</h4></div>
       }
     }
 
@@ -37,12 +43,8 @@ class StoriesIndex extends React.Component {
 
     return (
       <div>
-        <div className="storiesIndexTitle">
-          {followerStoriesTitle}
-        </div>
-        <div className="storiesIndexContainer">
-          {followerStories}
-        </div>
+        {followerStoriesTitle}
+        {followerStoriesDiv}
         <div className="storiesIndexTitle">
           <h4>General Stories</h4>
         </div>
