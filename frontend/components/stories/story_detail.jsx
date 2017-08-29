@@ -89,9 +89,9 @@ class StoryDetail extends React.Component {
       let bookmarkButton; 
       if (this.props.currentUser) {
         if (this.props.currentUser.bookmarked_story_ids.includes(this.props.story.id)) {
-          bookmarkButton = <button onClick={this.removeBookmark}>Remove Bookmark</button>
+          bookmarkButton = <button className="bookmark" onClick={this.removeBookmark}><img className="deleteBookmark-img" src={window.staticImages.deleteBookmark}/></button>
         } else {
-          bookmarkButton = <button onClick={this.addBookmark}>Add Bookmark</button>
+          bookmarkButton = <button className="bookmark" onClick={this.addBookmark}><img className="addBookmark-img" src={window.staticImages.addBookmark}/></button>
         }
         if (author.id === this.props.currentUser.id) {
           deleteButton = <button onClick={this.handleDelete}>Delete</button>

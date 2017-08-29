@@ -37,9 +37,9 @@ class StoriesIndexItem extends React.Component {
     
     if (this.props.currentUser) {
       if (this.props.currentUser.bookmarked_story_ids.includes(this.props.story.id)) {
-        bookmarkButton = <button onClick={this.removeBookmark}>Remove Bookmark</button>
+        bookmarkButton = <button className="bookmark" onClick={this.removeBookmark}><img className="deleteBookmark-img" src={window.staticImages.deleteBookmark}/></button>
       } else {
-        bookmarkButton = <button onClick={this.addBookmark}>Add Bookmark</button>
+        bookmarkButton = <button className="bookmark" onClick={this.addBookmark}><img className="addBookmark-img" src={window.staticImages.addBookmark}/></button>
       }
     }
 

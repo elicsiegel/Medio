@@ -137,6 +137,11 @@ body {
   height: 100%; 
 }
 
+.bookmark {
+  background: none;
+  border: none;
+  outline: none;
+}
 .author-index-image {
   width: 40px;
   height: 40px;
@@ -178,16 +183,31 @@ body {
   align-items: center;
 }
 
-.story-info button {
-  border-radius: 40px;
+.story-info button{
   background: white;
+  outline: none;
+}
+
+.story-info .bookmark {
+  border: none;
+}
+
+.story-info .follow {
+  border-radius: 40px;
   border-color: green;
   color: green;
-  outline: none;
 }
 
 .story-info > * {
   margin: 10px;
+}
+
+.deleteBookmark-img {
+  width: 25px;
+}
+
+.addBookmark-img {
+  width: 25px;
 }
 
 .like-div {
