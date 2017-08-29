@@ -53,6 +53,16 @@ body {
 
 .nav-user-welcome button {
   margin: 5px;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: lato;
+  font-size: 17px;
+  color: #26b56d;
+}
+
+.nav-user-welcome button:hover {
+  color: black;
 }
 
 .session-links a {

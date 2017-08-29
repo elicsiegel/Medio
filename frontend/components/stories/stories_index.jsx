@@ -8,6 +8,12 @@ class StoriesIndex extends React.Component {
     this.props.fetchStories(); 
   }
 
+  filterByCategory(stories, category) {
+    return stories.filter((story) => story.category === category).map((story) => {
+      return <StoriesIndexItem story={story} key={`story-category-key${story.id}`}/>
+    });
+  }
+
   render() {
     const {stories, currentUser} = this.props;
 
@@ -29,17 +35,10 @@ class StoriesIndex extends React.Component {
       }
     }
 
-    const generalStories = stories.filter((story) => story.category === "General").map((story) => {
-      return <StoriesIndexItem story={story} key={`story-category-key${story.id}`}/>
-    });
-
-    const artStories = stories.filter((story) => story.category === "Art").map((story) => {
-      return <StoriesIndexItem story={story} key={`story-category-key${story.id}`}/>
-    });
-
-    const scienceStories = stories.filter((story) => story.category === "Science").map((story) => {
-      return <StoriesIndexItem story={story} key={`story-category-key${story.id}`}/>
-    });
+    
+    const generalStories = this.filterByCategory(stories, "General");
+    const artStories = this.filterByCategory(stories, "Art");
+    const scienceStories = this.filterByCategory(stories, "Science");
 
     return (
       <div>
@@ -52,13 +51,13 @@ class StoriesIndex extends React.Component {
           {generalStories}
         </div>
         <div className="storiesIndexTitle">
-          <h4>Art Stories</h4>
+          <h4>Art</h4>
         </div>
         <div className="storiesIndexContainer">
           {artStories}
         </div>
         <div className="storiesIndexTitle">
-          <h4>Science Stories</h4>
+          <h4>Science</h4>
         </div>
         <div className="storiesIndexContainer">
           {scienceStories}
