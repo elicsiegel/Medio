@@ -483,10 +483,12 @@ form button:hover {
   outline: none;
   border: none;
   font-size: 15px;
+  font-family: lato;
+  color: #26b56d;
 }
 
 .comment-modifiers button:hover {
-  color: lightgreen;
+  color: black;
 }
 
 /* COMMENT ITEM */
