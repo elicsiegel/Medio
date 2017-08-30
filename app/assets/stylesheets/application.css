@@ -415,23 +415,18 @@ body {
   font-size: xx-large;
 }
 
-.story-form .input-title::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: gray;
-}
-.story-form .input-title::-moz-placeholder { /* Firefox 19+ */
-  color: gray;
-}
-.story-form .input-title:-ms-input-placeholder { /* IE 10+ */
-  color: gray;
-}
-.story-form .input-title:-moz-placeholder { /* Firefox 18- */
-  color: gray;
-}
+
 
 .story-form .input-body {
   width: 800px;
   font-size: 50px;
-  
+  color: gray;
+  font-size: xx-large;
+}
+
+.quill-input-body {
+  width: 800px;
+  font-size: 50px;
 }
 
 #upload-image-p {

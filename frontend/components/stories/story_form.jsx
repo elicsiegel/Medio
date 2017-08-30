@@ -14,12 +14,17 @@ class StoryForm extends React.Component {
       category: "General",
       author_id: this.props.currentUser.id
     };
-
+    this.showStoryFormBody = this.showStoryFormBody.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.deleteImage = this.deleteImage.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
+  }
+
+  showStoryFormBody(e) {
+    e.stopPropagation();
+    this.props.showStoryFormBody();
   }
 
   handleChange(value) {
@@ -103,7 +108,7 @@ class StoryForm extends React.Component {
       title = <h3>Create New Story</h3>
     } 
     return (
-      <div className="story-form">
+      <div className="story-form" onClick={e => e.stopPropagation()} onFocus={this.showStoryFormBody}>
         {title}
         <form  onSubmit={this.handleSubmit}>
           <div id="upload-image">
@@ -131,8 +136,19 @@ class StoryForm extends React.Component {
             value={this.state.title}
             placeholder="Title"
             onChange={this.update('title')}
-            required/>
-          <ReactQuill placeholder={"Body (double click on text to add formatting)"} className="input-body" theme="bubble" value={this.state.body} onChange={this.handleChange}/>
+            required />
+
+          <input onClick={this.showStoryFormBody}
+            placeholder="Tell your story..."
+            className={this.props.storyFormBodyVisible ? "inactive" : "input-body"} />
+          
+        
+
+            <ReactQuill placeholder={"(double click on text to add formatting)"} 
+              className={this.props.storyFormBodyVisible ? "quill-input-body" : "inactive"} 
+              theme="bubble" value={this.state.body} onChange={this.handleChange} />
+
+
           <button className="publish-button">Publish</button>
         </form>
       </div> 
