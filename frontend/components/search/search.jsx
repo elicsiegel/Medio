@@ -10,8 +10,8 @@ class Search extends React.Component {
     this.showSearchResults = this.showSearchResults.bind(this);
     this.renderStories = this.renderStories.bind(this);
     this.updateResults = this.updateResults.bind(this);
-    this.clearSearch = this.clearSearch.bind(this);
-    this.activateClearZone = this.activateClearZone.bind(this);
+    // this.clearSearch = this.clearSearch.bind(this);
+    // this.activateClearZone = this.activateClearZone.bind(this);
   }
 
   showSearchBar(e) {
@@ -22,23 +22,10 @@ class Search extends React.Component {
   showSearchResults(e) {
     e.stopPropagation();
     this.props.showSearchResults();
-    // debugger
-    // this.searchInput.className = ''
-  }
-
-  clearSearch() {
-    // debugger
-    // this.searchClearer.className = 'search-bar-clearer';
-    // this.searchInput.className = 'inactive';
-    // this.props.clearSearchResults();
   }
 
   activateClearZone() {
     this.searchClearer.className = 'search-bar-clearer active';
-  }
-
-  componentDidMount() {
-    // document.addEventListener('click', this.clearSearch);
   }
 
   updateResults(event){
@@ -93,7 +80,7 @@ class Search extends React.Component {
         <div className="search-input-div">
           <img onClick={this.showSearchBar} id="search-glass" src={window.staticImages.searchGlass}/>
           <input ref={ el => this.searchInput = el } 
-            className={this.props.searchBarVisible ? "" : "inactive"} 
+            className={this.props.searchBarVisible ? "input-fade-in" : "inactive"} 
             placeholder="Search" onChange={this.updateResults} 
             onClick={this.showSearchResults}/>
         </div>
