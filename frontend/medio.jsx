@@ -10,10 +10,6 @@ import { receiveComment, removeComment } from './actions/comment_actions';
 import {storyComments} from './reducers/selectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // window.signup = signup; 
-  // window.login = login; 
-  // window.logout = logout;
-  // const store = configureStore();
   window.storyComments = storyComments; 
   window.receiveComment = receiveComment; 
   window.removeComment = removeComment;
