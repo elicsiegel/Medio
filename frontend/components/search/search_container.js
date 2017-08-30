@@ -7,8 +7,8 @@ import { sendSearchQuery, clearSearchResults } from '../../actions/search_action
 const mapStateToProps = state => {
   return {
     storyResults: relevantStorySearchResults(state),
-    searchBarVisible: state.dropdowns.list.includes("searchBar"),
-    searchResultsVisible: state.dropdowns.list.includes("searchResults"),
+    searchBarVisible: state.dropdowns["searchBar"],
+    searchResultsVisible: state.dropdowns["searchResults"],
     // userResults: relevantUserSearchResults(state),
   };
 }

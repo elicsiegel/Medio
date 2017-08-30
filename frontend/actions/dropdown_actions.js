@@ -1,18 +1,10 @@
 export const RECEIVE_DROPDOWN = "RECEIVE_DROPDOWN";
-export const REMOVE_DROPDOWN = "REMOVE_DROPDOWN";
 export const CLEAR_DROPDOWNS = "CLEAR_DROPDOWNS"; 
 
 export const receiveDropdown = (name) => {
   return {
     type: RECEIVE_DROPDOWN,
-    name 
-  }
-}
-
-export const removeDropdown = (name) => {
-  return {
-    type: REMOVE_DROPDOWN,
-    name 
+    dropdown: {[name]: true} 
   }
 }
 
@@ -34,9 +26,4 @@ export const activateDropdown = (name) => {
   }
 }
 
-export const deactivateDropdown = (name) => {
-  return (dispatch) => {
-    dispatch(removeDropdown(name))
-  }
-}
 
