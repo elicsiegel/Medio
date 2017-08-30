@@ -3,7 +3,7 @@ class Story < ActiveRecord::Base
 
   include PgSearch
 
-  pg_search_scope :search_for, against: %i(title body)
+  pg_search_scope :search_for, against: %i(title body category)
   
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy 
