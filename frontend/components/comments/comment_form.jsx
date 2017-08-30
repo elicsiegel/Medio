@@ -10,7 +10,13 @@ class CommentForm extends React.Component {
       author_id: this.props.currentUser.id,
       story_id: this.props.story.id
     };
+    this.showCommentForm = this.showCommentForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  showCommentForm(e) {
+    e.stopPropagation();
+    this.props.showCommentForm();
   }
 
   handleSubmit(e) {
@@ -37,13 +43,17 @@ class CommentForm extends React.Component {
       <div className="comment-form">
         <h4>Create Comment</h4>
         <form  onSubmit={this.handleSubmit}>
+          <textarea 
+            placeholder="Add a comment..." 
+            className={this.props.commentFormVisible ? "inactive" : "comment-form-input"}
+            onClick={this.showCommentForm} />
           <textarea
-            className="comment-form-input"
-            ref="body"
+            className={this.props.commentFormVisible ? "comment-form-input-active" : "inactive"}
+            ref={ el => this.commentFormInput = el } 
             value={this.state.body}
             cols='20'
             rows='5'
-            placeholder="Add a comment..."
+            onClick={e => e.stopPropagation()}
             onChange={this.update('body')}
             required></textarea>
           <button className="publish-button">Publish</button>

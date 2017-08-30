@@ -62,4 +62,4 @@ sufficient CSS styling:
 - [ ] Categories for stories
 - [ ] Bookmarks on stories
 - [ ] User profiles with images
-- [ ] Multiple sessions
+- [ ] Article Search

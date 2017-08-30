@@ -10,8 +10,6 @@ class Search extends React.Component {
     this.showSearchResults = this.showSearchResults.bind(this);
     this.renderStories = this.renderStories.bind(this);
     this.updateResults = this.updateResults.bind(this);
-    // this.clearSearch = this.clearSearch.bind(this);
-    // this.activateClearZone = this.activateClearZone.bind(this);
   }
 
   showSearchBar(e) {

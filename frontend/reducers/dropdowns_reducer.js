@@ -1,9 +1,5 @@
 import { RECEIVE_DROPDOWN, CLEAR_DROPDOWNS } from '../actions/dropdown_actions';
 
-const defaultState2 = {
-  list: [],
-};
-
 const defaultState = {
   searchBar: false,
   searchResults: false 

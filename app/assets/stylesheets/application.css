@@ -588,11 +588,20 @@ form button:hover {
 
 .comment-form-input {
   width: 500px;
-  height: 100px;
+  height: 50px;
   font-size: 25px;
   outline: none;
   resize: none;
 }
+
+.comment-form-input-active {
+  width: 500px;
+  height: 200px;
+  font-size: 25px;
+  outline: none;
+  resize: none;
+}
+
 .comment-item {
   margin: 10px;
   border: 1px solid black;

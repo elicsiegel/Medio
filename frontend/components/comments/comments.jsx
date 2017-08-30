@@ -6,7 +6,7 @@ class Comments extends React.Component {
 
   render() {
     
-    const { deleteComment, createComment, updateComment, currentUser, story, comments} = this.props;
+    const { deleteComment, commentFormVisible, showCommentForm, createComment, updateComment, currentUser, story, comments} = this.props;
     
     let commentItems;
 
@@ -22,7 +22,11 @@ class Comments extends React.Component {
 
     let commentForm;
     if (this.props.currentUser) {
-      commentForm = <CommentForm story={story} createComment={createComment} currentUser={currentUser} />
+      commentForm = <CommentForm story={story} 
+                        createComment={createComment} 
+                        showCommentForm={showCommentForm}
+                        commentFormVisible={commentFormVisible}
+                        currentUser={currentUser} />
     }
 
     return (
