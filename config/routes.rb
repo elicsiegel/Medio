@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end 
     resources :comments, only: [:destroy, :update]
     resources :users, only: [:create]
+    resources :searches, only: [ :index ]
     resource :session, only: [:create, :destroy]
 
     post "users/:id/follow", to: "users#follow"

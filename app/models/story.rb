@@ -1,6 +1,10 @@
 class Story < ActiveRecord::Base 
   validates :title, :body, :author_id, presence: true
 
+  include PgSearch
+
+  pg_search_scope :search_for, against: %i(title body)
+  
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy 
 

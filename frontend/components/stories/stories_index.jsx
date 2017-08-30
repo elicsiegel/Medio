@@ -21,7 +21,6 @@ class StoriesIndex extends React.Component {
     let followerStoriesDiv; 
 
     if (this.props.currentUser) {
-
       followerStories = stories.filter((story) => this.props.currentUser.followee_ids.includes(story.author.id))
         .map((story) => {
           return <StoriesIndexItem createBookmark={createBookmark} deleteBookmark={deleteBookmark}
