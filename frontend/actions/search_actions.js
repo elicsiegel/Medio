@@ -17,6 +17,7 @@ export const clearSearchResults = () => ({
   type: CLEAR_SEARCH_RESULTS
 });
 
+
 export const sendSearchQuery = (searchQuery) => {
   return (dispatch) => {
     dispatch(fetchingSearch());
@@ -24,3 +25,4 @@ export const sendSearchQuery = (searchQuery) => {
       .then( results => dispatch(receiveSearchResults(results)) );
   };
 }
+

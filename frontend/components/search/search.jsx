@@ -6,16 +6,31 @@ class Search extends React.Component {
 
   constructor(props){
     super(props);
-
+    this.showSearchBar = this.showSearchBar.bind(this);
+    this.showSearchResults = this.showSearchResults.bind(this);
     this.renderStories = this.renderStories.bind(this);
     this.updateResults = this.updateResults.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
     this.activateClearZone = this.activateClearZone.bind(this);
   }
 
+  showSearchBar(e) {
+    e.stopPropagation();
+    this.props.showSearchBar();
+  }
+
+  showSearchResults(e) {
+    e.stopPropagation();
+    this.props.showSearchResults();
+    // debugger
+    // this.searchInput.className = ''
+  }
+
   clearSearch() {
-    this.searchClearer.className = 'search-bar-clearer';
-    this.props.clearSearchResults();
+    // debugger
+    // this.searchClearer.className = 'search-bar-clearer';
+    // this.searchInput.className = 'inactive';
+    // this.props.clearSearchResults();
   }
 
   activateClearZone() {
@@ -23,7 +38,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.clearSearch);
+    // document.addEventListener('click', this.clearSearch);
   }
 
   updateResults(event){
@@ -35,11 +50,11 @@ class Search extends React.Component {
     }
 
     this.props.sendSearchQuery(searchQuery)
-    this.activateClearZone();
   }
 
   renderStories() {
     if ( this.props.storyResults.length === 0 ) return;
+    if ( !this.props.searchResultsVisible ) return;
     
     const storiesList = this.props.storyResults.map( story => { 
       return(
@@ -75,7 +90,13 @@ class Search extends React.Component {
           onClick={ this.clearSearch }
           ref={ el => this.searchClearer = el } > 
         </div>
-        <input placeholder="Search" onChange={this.updateResults} onClick={(e) => e.stopPropagation()}/>
+        <div className="search-input-div">
+          <img onClick={this.showSearchBar} id="search-glass" src={window.staticImages.searchGlass}/>
+          <input ref={ el => this.searchInput = el } 
+            className={this.props.searchBarVisible ? "" : "inactive"} 
+            placeholder="Search" onChange={this.updateResults} 
+            onClick={this.showSearchResults}/>
+        </div>
         <div className="search-list-container">
   
             { this.renderStories() }

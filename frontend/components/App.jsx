@@ -10,8 +10,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Link } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 
-const App = () => (
-  <div>
+
+const App = (props) => (
+  <div onClick={props.deactivateAllDropdowns}>
       <div className="nav">
         <Link to='/'><h1>Medio</h1></Link>
         <SearchContainer />
