@@ -61,10 +61,6 @@ class StoryForm extends React.Component {
     this.setState({imageUrl: ""})
   }
 
-  componentDidUpdate() {
-    // debugger
-  }
-
   componentDidMount() {
     // signals if page is edit page or not
     if (this.props.match.path === '/stories/:storyId/edit') {
@@ -76,14 +72,42 @@ class StoryForm extends React.Component {
     }
   }
 
+  parseLinks() {
+    const updatedLinkBody = this.state.body.split("href=\"");
+    let finalValue = [];
+
+    for (let i = 0 ; i < updatedLinkBody.length ; i++) {
+      if (i % 2 === 0) {
+        finalValue.push(updatedLinkBody[i]);
+      } else {
+        finalValue.push("http://" + updatedLinkBody[i]);
+      }
+    }
+    return finalValue.join("href=\""); 
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const story = Object.assign({}, this.state);
+  
+    const updatedLinkBody = this.state.body.split("href=\"");
 
+    let finalValue = [];
+
+    for (let i = 0 ; i < updatedLinkBody.length ; i++) {
+      if (i % 2 === 0) {
+        finalValue.push(updatedLinkBody[i]);
+      } else {
+        finalValue.push("http://" + updatedLinkBody[i]);
+      }
+    }
+    
+    const parsedLinkBody = this.parseLinks(); 
+    
     let formData = new FormData();
 
     formData.append("story[title]", this.state.title);
-    formData.append("story[body]", this.state.body);
+    formData.append("story[body]", parsedLinkBody);
     formData.append("story[author_id]", this.state.author_id);
     formData.append("story[category]", this.state.category);
 
