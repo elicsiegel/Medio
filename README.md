@@ -1,9 +1,5 @@
 # Medio
-<input onClick={this.showStoryFormBody}
-            onFocus={this.showStoryFormBody}
-            placeholder="Tell your story..."
-            className={this.props.storyFormBodyVisible ? "inactive" : "input-body"} />
-            
+
 [Heroku link][heroku] 
 
 [Trello link][trello]
