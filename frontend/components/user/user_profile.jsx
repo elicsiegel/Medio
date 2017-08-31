@@ -41,9 +41,7 @@ class UserProfile extends React.Component {
     if (this.props.user) {
       authorInfo = (
         <div className="author-detail">
-          <div id="author-image-container">
-              <img id="author-image" src={this.props.user.user_img_url} />
-          </div>
+          <img id="author-image" src={this.props.user.user_img_url} />
           <h4>{this.props.user.username}</h4> 
           <p>Member Since: {this.stylizeDate(this.props.user.created_at)}</p>
         </div>

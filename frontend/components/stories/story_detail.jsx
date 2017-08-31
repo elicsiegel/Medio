@@ -118,10 +118,10 @@ class StoryDetail extends React.Component {
             {deleteButton}
           </div>
           <div className="story-info">
-            <div id="author-image-container">
+            <Link to={`/users/${this.props.story.author.id}`}>
               <img id="author-image" src={author_img_url} />
-            </div>
-            <h4>{author.username}</h4> 
+              <h4>{author.username}</h4> 
+            </Link>
             <p>{this.stylizeDate(created_at)}</p>
             {followButton}
             <div className="like-div">
