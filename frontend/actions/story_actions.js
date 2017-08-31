@@ -4,6 +4,12 @@ export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
 
+export const REQUEST_DATA = "REQUEST_DATA";
+
+export const requestData = () => ({
+  type: REQUEST_DATA
+});
+
 export const receiveStories = ({stories, comments}) => {
   return {
     type: RECEIVE_STORIES,
@@ -26,6 +32,7 @@ export const removeStory = story => ({
 });
 
 export const fetchStories = () => (dispatch) => {
+  dispatch(requestData());
   return APIUtil.fetchStories()
     .then(stories => dispatch(receiveStories(stories)));
 };
@@ -48,6 +55,7 @@ export const updateStory = story => dispatch => (
 );
 
 export const fetchStory = id => dispatch => {
+  dispatch(requestData());
   return APIUtil.fetchStory(id).then(story => dispatch(receiveStory(story)))
 };
 

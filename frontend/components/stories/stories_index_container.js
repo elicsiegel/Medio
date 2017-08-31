@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return {
     stories: allStories(state),
     currentUser: state.session.currentUser,
+    loading: state.loading,
   };
 };
 

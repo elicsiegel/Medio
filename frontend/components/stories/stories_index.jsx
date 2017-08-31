@@ -1,6 +1,6 @@
 import React from 'react';
 import StoriesIndexItem from './stories_index_item';
-
+import LoadingSpinner from '../loading_spinner';
 
 class StoriesIndex extends React.Component {
   componentDidMount() {
@@ -46,7 +46,8 @@ class StoriesIndex extends React.Component {
   }
 
   render() {
-    
+    if (this.props.loading) return (<LoadingSpinner />);
+
     const generalStories = this.filterByCategory("General");
     const artStories = this.filterByCategory("Art");
     const scienceStories = this.filterByCategory("Science");

@@ -6,6 +6,7 @@ import CommentsReducer from './comments_reducer';
 import SearchesReducer from './searches_reducer';
 import DropdownsReducer from './dropdowns_reducer';
 import UsersReducer from './users_reducer';
+import LoadingReducer from './loading_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   comments: CommentsReducer,
   dropdowns: DropdownsReducer, 
   users: UsersReducer,
+  loading: LoadingReducer, 
 });
 
 export default rootReducer;
