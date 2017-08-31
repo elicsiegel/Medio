@@ -65,7 +65,30 @@ class Search extends React.Component {
   }
 
   renderUsers() {
+    if ( this.props.userResults.length === 0 ) return;
+    if ( !this.props.searchResultsVisible ) return;
 
+    const usersList = this.props.userResults.map( user => { 
+      return(
+          <li className="search-list-item" key={`user-id-${user.id}`}>
+            <Link to={`/users/${user.id}`} className={'story-search-link'} onClick={this.props.clearSearchResults}>
+              
+                <img className="search-story-img" src={user.user_img_url} />
+                <span>{ user.username }</span>
+                
+            </Link>
+          </li>
+      );
+    });
+
+    return (
+      <div className="stories-search-list-container">
+        <span>Users</span>
+        <ul className="search-list sub-search-list">
+          {usersList}
+        </ul>
+      </div>
+    );
   }
 
   render() {
@@ -85,6 +108,7 @@ class Search extends React.Component {
         <div className={this.props.searchResultsVisible ? "search-list-container" : "inactive"}>
   
             { this.renderStories() }
+            { this.renderUsers() }
           
         </div>
       </div>

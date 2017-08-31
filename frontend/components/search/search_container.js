@@ -7,15 +7,14 @@ import { sendSearchQuery, clearSearchResults } from '../../actions/search_action
 const mapStateToProps = state => {
   return {
     storyResults: relevantStorySearchResults(state),
+    userResults: relevantUserSearchResults(state),
     searchBarVisible: state.dropdowns["searchBar"],
     searchResultsVisible: state.dropdowns["searchResults"],
-    // userResults: relevantUserSearchResults(state),
   };
 }
 
 const mapDispatchToProps = dispatch => ({
   clearSearchResults: () => dispatch(clearSearchResults()),
-  // fetchStory: storyId => dispatch(fetchStory(storyId)),
   sendSearchQuery: searchQuery => dispatch(sendSearchQuery(searchQuery)),
   showSearchResults: () => dispatch(activateDropdown('searchResults')),
   showSearchBar: () => dispatch(activateDropdown('searchBar')),

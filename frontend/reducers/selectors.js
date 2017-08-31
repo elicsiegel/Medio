@@ -17,7 +17,15 @@ export const relevantStorySearchResults = ({searches, stories}) => {
 }
 
 export const relevantUserSearchResults = ({searches, users}) => {
+  let arrayedUsers = allStoriesPure(users);
 
+  return arrayedUsers.filter((user) => searches.user_ids.includes(user.id));
+}
+
+export const userStories = ({users, stories}, userId) => {
+  let arrayedStories = allStoriesPure(stories); 
+
+  return arrayedStories.filter((story) => story.author.id === +userId);
 }
 
 export const allComments = ({comments}, story) => {
