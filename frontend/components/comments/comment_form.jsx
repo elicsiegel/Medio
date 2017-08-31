@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class CommentForm extends React.Component {
 
@@ -32,6 +33,7 @@ class CommentForm extends React.Component {
     if(this.props.story.id !== this.state.story_id) {
       this.setState({story_id: this.props.story.id})
     }
+    this.commentFormInput.focus();
   }
 
   update(property) {
