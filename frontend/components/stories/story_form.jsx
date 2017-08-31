@@ -79,6 +79,8 @@ class StoryForm extends React.Component {
     for (let i = 0 ; i < updatedLinkBody.length ; i++) {
       if (i % 2 === 0) {
         finalValue.push(updatedLinkBody[i]);
+      } else if (updatedLinkBody[i].startsWith("http://") || updatedLinkBody[i].startsWith("https://")) {
+        finalValue.push(updatedLinkBody[i]);
       } else {
         finalValue.push("http://" + updatedLinkBody[i]);
       }
@@ -89,18 +91,6 @@ class StoryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const story = Object.assign({}, this.state);
-  
-    const updatedLinkBody = this.state.body.split("href=\"");
-
-    let finalValue = [];
-
-    for (let i = 0 ; i < updatedLinkBody.length ; i++) {
-      if (i % 2 === 0) {
-        finalValue.push(updatedLinkBody[i]);
-      } else {
-        finalValue.push("http://" + updatedLinkBody[i]);
-      }
-    }
     
     const parsedLinkBody = this.parseLinks(); 
     
