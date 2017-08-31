@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import StoryDetail from './story_detail';
 import { allStories } from '../../reducers/selectors';
-import { fetchStory, deleteStory, addStoryLike, deleteStoryLike } from '../../actions/story_actions';
+import { fetchStory, fetchStories, deleteStory, addStoryLike, deleteStoryLike } from '../../actions/story_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import { createBookmark, deleteBookmark } from '../../actions/bookmark_actions';
 
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchStories: () => dispatch(fetchStories()),
     createFollow: (follow) => dispatch(createFollow(follow)),
     deleteFollow: (follow) => dispatch(deleteFollow(follow)),
     createBookmark: (bookmark) => dispatch(createBookmark(bookmark)), 

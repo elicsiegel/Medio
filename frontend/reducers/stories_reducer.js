@@ -16,7 +16,8 @@ const storiesReducer = (state = {}, action) => {
 
     case REMOVE_STORY:
       nextState = merge({}, state);
-      delete nextState[action.story.id];
+      delete nextState[Object.keys(action.story.story)[0]];
+  
       return nextState;
 
     case RECEIVE_SEARCH_RESULTS:

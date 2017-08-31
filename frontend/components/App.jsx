@@ -29,7 +29,7 @@ const App = (props) => (
             <Route path="/stories/:storyId" exact component={StoryDetailContainer} />
           </Switch>
           <ProtectedRoute path="/bookmarks" component={BookmarkListContainer} />
-          <Route path="/users/:userId" component={ UserProfileContainer } />
+          <Route path="/users/:userId" exact component={ UserProfileContainer } />
           <Route path="/" exact component={ StoriesIndexContainer } />
         </div>
       </ScrollToTop>

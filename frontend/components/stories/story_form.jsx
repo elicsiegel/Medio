@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom'; 
 import Dropzone from 'react-dropzone';
 import ReactQuill from 'react-quill';
+import renderHTML from 'react-render-html';
 
 
 class StoryForm extends React.Component {
@@ -25,6 +26,7 @@ class StoryForm extends React.Component {
   showStoryFormBody(e) {
     e.stopPropagation();
     this.props.showStoryFormBody();
+    this.storyBodyFormInput.focus(); 
   }
 
   handleChange(value) {
@@ -59,6 +61,10 @@ class StoryForm extends React.Component {
     this.setState({imageUrl: ""})
   }
 
+  componentDidUpdate() {
+    // debugger
+  }
+
   componentDidMount() {
     // signals if page is edit page or not
     if (this.props.match.path === '/stories/:storyId/edit') {
@@ -82,8 +88,8 @@ class StoryForm extends React.Component {
     formData.append("story[category]", this.state.category);
 
     if (this.state.imageFile !== undefined) {
-        formData.append("story[image]", this.state.imageFile);
-      }
+      formData.append("story[image]", this.state.imageFile);
+    }
 
     if (this.props.match.path === "/stories/:storyId/edit") {
       formData.append("story[id]", this.state.id);
@@ -107,8 +113,9 @@ class StoryForm extends React.Component {
     }  else { 
       title = <h3>Create New Story</h3>
     } 
+    let bodyPlaceholder = "<p>Tell your story...</p>"
     return (
-      <div className="story-form" onClick={e => e.stopPropagation()} onFocus={this.showStoryFormBody}>
+      <div className="story-form" onClick={e => e.stopPropagation()} >
         {title}
         <form  onSubmit={this.handleSubmit}>
           <div id="upload-image">
@@ -136,18 +143,12 @@ class StoryForm extends React.Component {
             value={this.state.title}
             placeholder="Title"
             onChange={this.update('title')}
-            required />
+            required />   
 
-          <input onClick={this.showStoryFormBody}
-            placeholder="Tell your story..."
-            className={this.props.storyFormBodyVisible ? "inactive" : "input-body"} />
-          
-        
-
-            <ReactQuill placeholder={"(double click on text to add formatting)"} 
-              className={this.props.storyFormBodyVisible ? "quill-input-body" : "inactive"} 
-              theme="bubble" value={this.state.body} onChange={this.handleChange} />
-
+          <ReactQuill placeholder={"Body (double click on text to add formatting)"} 
+            ref={ el => this.storyBodyFormInput = el } 
+            className="quill-input-body" 
+            theme="bubble" value={this.state.body} onChange={this.handleChange} />
 
           <button className="publish-button">Publish</button>
         </form>

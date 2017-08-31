@@ -18,16 +18,10 @@ class StoryDetail extends React.Component {
 
   componentDidMount() {
     if (this.props.match.url !== '/stories/new') {
-      if (this.props.story === undefined) {
-        this.props.fetchStory(this.props.match.params.storyId);   
+      if (this.props.story === undefined) { 
+        this.props.fetchStories();  
       }
     }
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.story === undefined) {
-      this.props.fetchStory(newProps.match.params.storyId)
-    }    
   }
 
   addLike() {
