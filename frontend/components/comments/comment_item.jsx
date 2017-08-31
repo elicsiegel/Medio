@@ -7,15 +7,18 @@ class CommentItem extends React.Component {
     super(props)
 
     this.state = {
-      body: "",
-      author_id: null,
-      story_id: null 
+      comment: {
+        body: "",
+        author_id: null,
+        story_id: null, 
+      }, 
+      editStatus: false 
     };
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.editStatus = false; 
   }
 
   stylizeDate(created_at) {
@@ -36,32 +39,28 @@ class CommentItem extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
-    this.props.updateComment(this.state).then(() => {
-      this.editStatus = false; 
-      this.setState({body: ""});
+    this.props.updateComment(this.state.comment).then(() => {
+      this.setState({ comment: {body: ""}, editStatus: false });
     });
   }
 
-  toggleEdit() {
-    if (this.editStatus === false) {
-      this.editStatus = true;
-    } else if (this.editStatus === true) {
-      this.editStatus = false;
-    }
+  handleCancel() {
+    this.setState({editStatus: false})
   }
 
   handleEdit() {
-    this.editStatus = true; 
-    this.setState({body: this.props.comment.body, id: this.props.comment.id, author_id: this.props.comment.author_id, story_id: this.props.comment.story_id}); 
+    this.setState({ comment: {body: this.props.comment.body, id: this.props.comment.id, author_id: this.props.comment.author_id, story_id: this.props.comment.story_id}, editStatus: true}); 
   }
 
   update(property) {
-    return e => this.setState({[property]: e.target.value});
+    const { story_id, author_id, id } = this.props.comment;
+    return e => this.setState({comment: {[property]: e.target.value, story_id: story_id, author_id: author_id, id: id}});
   }
 
   render() {
     let deleteButton;
     let editButton;
+    let cancelButton; 
     let editForm;
 
     if (this.props.currentUser) {
@@ -69,17 +68,19 @@ class CommentItem extends React.Component {
         deleteButton = <button onClick={this.handleDelete}>Delete</button>
         editButton = <button onClick={this.handleEdit}>Edit</button>
       }
-      if (this.editStatus) { 
+
+      if (this.state.editStatus) { 
+        cancelButton = <button onClick={this.handleCancel}>Cancel</button>
         editForm = (
             <form onSubmit={this.handleUpdate}>
-              <input className="comment-body-input" value={this.state.body} onChange={this.update('body')} required/>
+              <input className="comment-body-input" value={this.state.comment.body} onChange={this.update('body')} required/>
               <button className="publish-button">Update</button>
             </form>
           ); 
       } 
     }
 
-    if (this.editStatus === false){
+    if (this.state.editStatus === false){
         editForm = <p className="comment-item-text">{this.props.comment.body}</p>
       }
 
@@ -94,6 +95,7 @@ class CommentItem extends React.Component {
           <div className="comment-modifiers">
             {deleteButton}
             {editButton}
+            {cancelButton}
           </div>
         </div>
         <div className="comment-item-body"> 

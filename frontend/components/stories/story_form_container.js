@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import StoryForm from './story_form';
 import { activateDropdown } from '../../actions/dropdown_actions';
-// import { allPosts } from '../reducers/selectors';
 
 import { createStory, updateStory, fetchStory } from '../../actions/story_actions';
 

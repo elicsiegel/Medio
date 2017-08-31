@@ -8,41 +8,53 @@ class StoriesIndex extends React.Component {
     this.props.fetchStories(); 
   }
 
-  filterByCategory(stories, category, currentUser, createBookmark, deleteBookmark) {
+  filterByCategory(category) {
+    const {stories, currentUser, createBookmark, deleteBookmark} = this.props;
+
     return stories.filter((story) => story.category === category).map((story) => {
       return <StoriesIndexItem createBookmark={createBookmark} deleteBookmark={deleteBookmark} currentUser={currentUser} story={story} key={`story-category-key${story.id}`}/>
     });
   }
 
-  render() {
-    const {stories, currentUser, createBookmark, deleteBookmark} = this.props;
-    let followerStoriesTitle;
-    let followerStories;
-    let followerStoriesDiv; 
+  generateFollowerStories() {
+    if ( !this.props.currentUser ) return;
 
-    if (this.props.currentUser) {
-      followerStories = stories.filter((story) => this.props.currentUser.followee_ids.includes(story.author.id))
+    const {stories, currentUser, createBookmark, deleteBookmark} = this.props; 
+
+    const followerStories = stories.filter((story) => this.props.currentUser.followee_ids.includes(story.author.id))
         .map((story) => {
           return <StoriesIndexItem createBookmark={createBookmark} deleteBookmark={deleteBookmark}
                     currentUser={currentUser} story={story} key={`story-follower-key${story.id}`}/>
         });
 
-      followerStoriesDiv = <div id="followedStoriesContainer" className="storiesIndexContainer">{followerStories}</div>
+    return (
+      <div id="followedStoriesContainer" className="storiesIndexContainer">
+        {followerStories}
+      </div>
+    );
+  }
 
-      if (this.props.currentUser.followee_ids.length >= 1) {
-        followerStoriesTitle = <div className="storiesIndexTitle"><h4>Stories by People You are Following</h4></div>
-      }
-    }
+  generateFollowerTitle() {
+    if ( !this.props.currentUser ) return;
+    if ( this.props.currentUser.followee_ids.length < 1) return;
 
+    return (
+      <div className="storiesIndexTitle">
+        <h4>Stories by People You are Following</h4>
+      </div>
+    );
+  }
+
+  render() {
     
-    const generalStories = this.filterByCategory(stories, "General", currentUser, createBookmark, deleteBookmark);
-    const artStories = this.filterByCategory(stories, "Art", currentUser, createBookmark, deleteBookmark);
-    const scienceStories = this.filterByCategory(stories, "Science", currentUser, createBookmark, deleteBookmark);
+    const generalStories = this.filterByCategory("General");
+    const artStories = this.filterByCategory("Art");
+    const scienceStories = this.filterByCategory("Science");
 
     return (
       <div>
-        {followerStoriesTitle}
-        {followerStoriesDiv}
+        {this.generateFollowerTitle()}
+        {this.generateFollowerStories()}
         <div className="storiesIndexTitle">
           <h4>General Stories</h4>
         </div>
