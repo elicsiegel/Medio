@@ -82,7 +82,7 @@ class Search extends React.Component {
             placeholder="Search" onChange={this.updateResults} 
             onClick={this.showSearchResults}/>
         </div>
-        <div className="search-list-container">
+        <div className={this.props.searchResultsVisible ? "search-list-container" : "inactive"}>
   
             { this.renderStories() }
           

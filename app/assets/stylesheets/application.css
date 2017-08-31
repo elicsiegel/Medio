@@ -138,6 +138,7 @@ body {
   margin-top: 20px;
   position: absolute;
   background: white;
+  min-width: 200px;
   border-top: 2px solid gray;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
@@ -218,6 +219,7 @@ body {
   border-bottom: 1 px solid black;
   padding-left: 15%;
   margin-top: 50px;
+  font-size: 20px;
 }
 
 
@@ -576,6 +578,10 @@ form button:hover {
 }
 
 /* COMMENT FORM */
+
+.commentsTitle {
+  font-size: 20px;
+}
 
 .comment-item-text {
 
