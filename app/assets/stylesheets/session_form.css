@@ -1,0 +1,113 @@
+.form-modal-overlay {
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+  animation-name: fade-in;
+  animation-duration: .5s;
+}
+
+.form {
+  position: fixed;
+  margin: auto;
+  margin-top: 50px;
+  padding: 30px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border: none;
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+  overflow: auto;
+  animation-name: from-bottom;
+  animation-duration: 0.75s;
+  z-index: 2000;
+  zoom: 1.2;
+}
+
+@keyframes fade-in {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes from-bottom {
+  0% {transform: translateY(100px) }
+  100% {transform: translateY(0) }
+}
+
+.image-upload {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload input[type="file"] {
+  border: none;
+  outline: none;
+}
+
+.image-box {
+  max-width: 35px;
+}
+
+.session-file-input {
+  padding-left: 20%; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form h2 {
+  margin-bottom: 0px;
+}
+form label {
+  margin: 5px;
+}
+.form p:hover {
+  color: blue;
+}
+form button {
+  max-width: 60px;
+  font-family: lato;
+  outline: none;
+  font-size: 15px;
+  background: none;
+  border: none;
+  margin-top: 15px;
+}
+
+form button:hover {
+  color: blue;
+}
+
+.errors-container {
+  min-height: 40px; 
+  min-width: 180px;
+  justify-content: center;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+}
+
+.errors {
+  font-size: 10px;
+  max-width: 150px;
+  list-style: none;
+  color: red;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}

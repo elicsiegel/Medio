@@ -1,0 +1,48 @@
+.nav {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 150px;
+  padding-right: 150px; 
+ }
+
+.nav a {
+  text-decoration: none; 
+  color: gray;
+}
+
+.nav a:hover {
+  color: black;
+}
+
+.nav-user-welcome {
+  display: flex; 
+  align-items: center;
+}
+
+.nav-user-welcome h3 {
+  margin: 5px;
+}
+
+.nav-user-welcome a {
+  margin: 5px;
+}
+
+.nav-user-welcome button {
+  margin: 5px;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: lato;
+  font-size: 17px;
+  color: #26b56d;
+}
+
+.nav-user-welcome button:hover {
+  color: black;
+}
+
+.session-links a {
+  padding: 10px;
+  color: #26b56d;
+}

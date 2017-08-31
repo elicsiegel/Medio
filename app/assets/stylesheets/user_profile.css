@@ -1,0 +1,10 @@
+.author-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-detail > * {
+  margin-left: 8px;
+  margin-right: 8px;
+}

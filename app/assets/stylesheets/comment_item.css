@@ -1,0 +1,34 @@
+.comment-author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+
+.comment-body-input {
+  width: 500px;
+  height: 50px;
+}
+
+.comment-header {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-header > * {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.comment-author-info {
+  display: flex; 
+  align-items: center;
+}
+
+.comment-author-info p{
+  color: gray;
+}
+
+.comment-author-info > * {
+  margin: 5px;
+}

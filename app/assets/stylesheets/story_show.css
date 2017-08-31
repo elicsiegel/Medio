@@ -1,0 +1,98 @@
+.story-show {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.story-info {
+  display: flex;
+  align-items: center;
+}
+
+.story-info a {
+  display: flex;
+  align-items: center;
+}
+
+.story-info button{
+  background: white;
+  outline: none;
+}
+
+.story-info .bookmark {
+  border: none;
+}
+
+.story-info .follow {
+  border-radius: 40px;
+  border-color: green;
+  color: green;
+}
+
+.story-info > * {
+  margin: 10px;
+}
+
+.deleteBookmark-img {
+  width: 25px;
+}
+
+.addBookmark-img {
+  width: 25px;
+}
+
+.like-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.like-div p {
+  margin: 0px;
+}
+
+.story-info #author-image {
+  margin-right: 20px;
+}
+
+#author-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px; 
+}
+
+#like-button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#full-heart-img {
+  width: 15px;
+}
+
+#empty-heart-img {
+  width: 15px;
+}
+
+.story-detail-body {
+  white-space: pre-wrap;
+}
+
+.story-detail-img {
+  max-width: 1000px;
+}
+
+#modify-own-story > *{
+  padding: 7px;
+  font-size: 15px;
+  color: blue;
+  text-decoration: none;
+}
+
+#modify-own-story button {
+  border: none;
+  background: none;
+  font-family: 'lato';
+}

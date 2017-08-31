@@ -1,0 +1,97 @@
+.storiesIndexItem {
+  width: 520px;
+  height: 225px;
+  border: .5px solid lightgray;
+  margin: 3px;
+  display: flex;
+}
+
+.stories-index-item-link {
+  text-decoration: none; 
+}
+
+.storiesIndexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding-top: 28px;
+  text-align: center;
+  border-top: 1px solid lightgray;
+  /*width: 1000px;*/
+}
+
+#followedStoriesContainer {
+  border-top: none;
+}
+
+.storiesIndexTitle {
+  border-bottom: 1 px solid black;
+  padding-left: 15%;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+
+.stories-index-username {
+  color: black;
+}
+
+.stories-index-date {
+  font-size: 12px;
+  color: gray;
+}
+
+.index-title-body {
+  min-width: 50%;
+  background: white;
+}
+
+.index-title-body a{
+  text-decoration: none;
+  color: black;
+}
+
+.index-title-body > p{
+  font-size: 12px; 
+  color: gray;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.stories-index-img {
+  height: 100%; 
+}
+
+.bookmark {
+  background: none;
+  border: none;
+  outline: none;
+}
+.author-index-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+
+.author-index-image-div {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.author-info-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-info-index > * {
+  padding: 6px;
+}
+
+.image-div {
+  min-width: 50%;
+  overflow: hidden;
+}
