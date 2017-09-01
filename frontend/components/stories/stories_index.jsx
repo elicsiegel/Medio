@@ -51,6 +51,8 @@ class StoriesIndex extends React.Component {
     const generalStories = this.filterByCategory("General");
     const artStories = this.filterByCategory("Art");
     const scienceStories = this.filterByCategory("Science");
+    const travelStories = this.filterByCategory("Travel");
+    const foodStories = this.filterByCategory("Food");
 
     return (
       <div>
@@ -73,6 +75,18 @@ class StoriesIndex extends React.Component {
         </div>
         <div className="storiesIndexContainer">
           {scienceStories}
+        </div>
+        <div className="storiesIndexTitle">
+          <h4>Travel</h4>
+        </div>
+        <div className="storiesIndexContainer">
+          {travelStories}
+        </div>
+        <div className="storiesIndexTitle">
+          <h4>Food</h4>
+        </div>
+        <div className="storiesIndexContainer">
+          {foodStories}
         </div>
       </div>
     );

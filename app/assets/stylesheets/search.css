@@ -9,7 +9,6 @@
     top: 0;
     bottom: 0;
     left: 0px;
-
 }
 
 .inactive {
@@ -71,14 +70,17 @@
   font-size: 13px;
 }
 
-.search-list-container a span:hover{
+/*.search-list-container a span:hover{
   color: #26b56d;
+}*/
+.search-list-item:hover {
+  background: lightgray;
 }
 
 .search-list {
   list-style: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .stories-search-list-container {

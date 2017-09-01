@@ -3,6 +3,12 @@ import StoriesIndexItem from '../stories/stories_index_item';
 
 class UserProfile extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.followAuthor = this.followAuthor.bind(this);
+    this.unfollowAuthor = this.unfollowAuthor.bind(this);
+  }
+  
   componentDidMount() {
     // request stories from the API 
     if (this.props.user === undefined) {
@@ -31,6 +37,17 @@ class UserProfile extends React.Component {
     return `${months[month]} ${year}`;
   }
 
+  followAuthor() {
+    debugger
+    const follow = {follower_id: this.props.currentUser.id, followee_id: this.props.user.id}
+    this.props.createFollow(follow); 
+  }
+
+  unfollowAuthor() {
+    const follow = {follower_id: this.props.currentUser.id, followee_id: this.props.user.id}
+    this.props.deleteFollow(follow)
+  }
+
   render() {
     const userArticleItems = this.props.userStories.map((story) => {
           return <StoriesIndexItem createBookmark={this.props.createBookmark} deleteBookmark={this.props.deleteBookmark}
@@ -38,12 +55,23 @@ class UserProfile extends React.Component {
         });
 
     let authorInfo;
+    let followButton; 
     if (this.props.user) {
+
+      if (this.props.currentUser) {
+        if (this.props.currentUser.followee_ids.includes(this.props.user.id)) {
+          followButton = <button className='follow' onClick={this.unfollowAuthor}>Unfollow</button>
+        } else {
+          followButton = <button className='follow' onClick={this.followAuthor}>Follow</button>
+        } 
+      }
+
       authorInfo = (
         <div className="author-detail">
           <img id="author-image" src={this.props.user.user_img_url} />
           <h4>{this.props.user.username}</h4> 
           <p>Member Since: {this.stylizeDate(this.props.user.created_at)}</p>
+          {followButton}
         </div>
       );
     }

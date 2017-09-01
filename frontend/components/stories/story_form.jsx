@@ -149,6 +149,8 @@ class StoryForm extends React.Component {
               <option value="General">General</option>
               <option value="Art">Art</option>
               <option value="Science">Science</option>
+              <option value="Travel">Travel</option>
+              <option value="Food">Food</option>
             </select>
           </label>
           <input
