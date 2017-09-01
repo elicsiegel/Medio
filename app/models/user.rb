@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
 
   include PgSearch
 
-  pg_search_scope :search_for, against: %i(username)
+  pg_search_scope :search_for, against: %i(username),
+    :using => { 
+      :tsearch => {:prefix => true}
+    }
 
   after_initialize :ensure_session_token
 

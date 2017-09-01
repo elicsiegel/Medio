@@ -3,7 +3,10 @@ class Story < ActiveRecord::Base
 
   include PgSearch
 
-  pg_search_scope :search_for, against: %i(title body category)
+  pg_search_scope :search_for, against: %i(title body category), 
+    :using => { 
+      :tsearch => {:prefix => true}
+    }
   
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy 
