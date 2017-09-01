@@ -9,7 +9,9 @@ const storiesReducer = (state = {}, action) => {
   
   switch(action.type) {
     case RECEIVE_STORY:
-      return merge( {}, state, action.story ); 
+      nextState = Object.assign( {}, state, action.story );
+    
+      return  nextState; 
 
     case RECEIVE_STORIES:
       return merge( {}, state, action.stories );
