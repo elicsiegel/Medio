@@ -8,7 +8,6 @@ const defaultState = {
 const DropdownsReducer = (state = defaultState, action) => {
   let nextState; 
   switch(action.type){
-
     case RECEIVE_DROPDOWN:
       nextState = Object.assign({}, state, action.dropdown);
       return nextState; 
