@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentsContainer from '../comments/comments_container';
 import renderHTML from 'react-render-html';
+import LoadingSpinner from '../loading_spinner';
 
 class StoryDetail extends React.Component {
 
@@ -73,6 +74,8 @@ class StoryDetail extends React.Component {
   }
 
   render() {
+    if (this.props.loading) return (<LoadingSpinner />);
+
     if (this.props.story && this.props.match.url !== '/stories/new') {
       const { title, body, author, created_at, id, author_img_url, story_img_url, num_likes, liker_ids } = this.props.story;
 

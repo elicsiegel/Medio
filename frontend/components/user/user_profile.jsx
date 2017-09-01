@@ -1,5 +1,6 @@
 import React from 'react';
 import StoriesIndexItem from '../stories/stories_index_item';
+import LoadingSpinner from '../loading_spinner';
 
 class UserProfile extends React.Component {
 
@@ -8,7 +9,7 @@ class UserProfile extends React.Component {
     this.followAuthor = this.followAuthor.bind(this);
     this.unfollowAuthor = this.unfollowAuthor.bind(this);
   }
-  
+
   componentDidMount() {
     // request stories from the API 
     if (this.props.user === undefined) {
@@ -38,7 +39,6 @@ class UserProfile extends React.Component {
   }
 
   followAuthor() {
-    debugger
     const follow = {follower_id: this.props.currentUser.id, followee_id: this.props.user.id}
     this.props.createFollow(follow); 
   }
@@ -49,6 +49,8 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    if (this.props.loading) return (<LoadingSpinner />);
+
     const userArticleItems = this.props.userStories.map((story) => {
           return <StoriesIndexItem createBookmark={this.props.createBookmark} deleteBookmark={this.props.deleteBookmark}
                     currentUser={this.props.currentUser} story={story} key={`story-follower-key${story.id}`}/>

@@ -12,7 +12,7 @@ class StoryForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      category: "General",
+      category: "",
       author_id: this.props.currentUser.id
     };
     this.showStoryFormBody = this.showStoryFormBody.bind(this);
@@ -67,7 +67,7 @@ class StoryForm extends React.Component {
       const storyId = this.props.match.params.storyId; 
 
       this.props.fetchStory(storyId).then( (res) => { 
-        this.setState({ title: res.story[storyId].title, imageUrl: res.story[storyId].story_img_url, body: res.story[storyId].body, id: res.story[storyId].id })
+        this.setState({ title: res.story[storyId].title, imageUrl: res.story[storyId].story_img_url, body: res.story[storyId].body, id: res.story[storyId].id, category: res.story[storyId].category})
       }) 
     }
   }
@@ -145,7 +145,7 @@ class StoryForm extends React.Component {
           </div>
           <label>
             Pick a category:
-            <select value={this.state.category} onChange={this.handleCategoryChange}>
+            <select value={this.state.category !== "" ? this.state.category : "General"} onChange={this.handleCategoryChange}>
               <option value="General">General</option>
               <option value="Art">Art</option>
               <option value="Science">Science</option>

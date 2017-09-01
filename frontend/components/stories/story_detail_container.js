@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     story: state.stories[ownProps.match.params.storyId],
     comments: Object.values(state.comments), 
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    loading: state.loading, 
   };
 };
 

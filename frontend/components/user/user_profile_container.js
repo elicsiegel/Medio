@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     user: state.users[ownProps.match.params.userId],
     userStories: userStories(state, ownProps.match.params.userId),
     currentUser: state.session.currentUser,
+    loading: state.loading,
   };
 };
 
