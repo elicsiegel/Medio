@@ -8,7 +8,7 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
 ## Features & Implementation
 
-### Story Index 
+### Stories and Story Index 
 
   At the core of Medio are the stories that users can read, create and edit. On the database side, the stories are stored in one table in the database, which contains columns for `id`, `author_id`, `body`, `created_at` and `updated_at`. Stories each belong to one author via their `author_id` which connects to the Users table storing more detailed information about the author. 
 
@@ -44,8 +44,6 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
 ### Search 
 
-  ![search](wireframes/search.png)
-
   Users are able to search the database using a dropdown menu located on the nav bar. As the user enters information, the search component activates an API call querying the `stories` and `users` tables to return a list of matching results. 
 
   On the backend the search is facilitated using the PGSearch gem which allows for querying across multiple columns in the `stories` and `users` tables. Partial queries with matching prefixes will also be returned. 
@@ -61,14 +59,14 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
 ### Dropdowns
 
-  To facilitate a dynamic user experience, a dropdown slice of state is employed to toggle the rendering of different dropdowns. 
+  To facilitate a dynamic user experience, a dropdown slice of state is employed to toggle the rendering of different dropdowns. If a dropdown is registered is true, then it will appear on the page and if not it will be hidden. 
 
+  ![search](wireframes/search.png)
 
-![tag screenshot](wireframes/tag-search.png)
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for Medio are outlined below.
 
 ### Customized Categories
 
