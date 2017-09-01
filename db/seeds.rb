@@ -188,3 +188,18 @@ Competello’s arrangements, for example, recall the loud, neon-pastel prints of
 file = File.open('app/assets/images/floral.jpg')
 story17.image = file 
 story17.save!
+
+story18 = Story.new(category: "Art", title: "How Bernini Captured the Power of Human Sexuality in Stone", author_id: user4.id, body: "<p>Gian Lorenzo Bernini, the famed Italian Baroque sculptor of the 17th century, lived and worked by an audacious mantra: “Those who never dare to break the rules never surpass them.”\n 
+Indeed, while the tempestuous artist’s work was funded primarily by the papacy, he interpreted religious subject matter with not only unparalleled skill, but also radical artistic license.\n 
+Bernini carved mighty gods and martyred saints into marble as many great sculptors working in the classical style, like Michelangelo, did before him. But he endowed his omnipotent subjects with a particularly human aspect, sculpting into their forms and expressions passionate emotions and carnal urges—and effectively revolutionizing three-dimensional art and the representation of the body.\n 
+The most striking and legendary example of Bernini’s marriage of sex and the sacred is embodied in Ecstasy of Saint Teresa (1647–52), a sculpture nestled at the center of the small, dark Roman church Santa Maria della Vittoria. It captures the dramatic moment when the Catholic Saint Teresa is visited by an angel, who is poised to pierce her with an arrow.\n 
+In prior artistic representations of the scene, Teresa’s body was most often depicted as rigid and her expression stone-faced. But Bernini took a different tack. His Teresa is writhing, her mouth agape and eyes glazed over in what looks like orgasmic pleasure. What’s more, the angel, who smiles as he gently lifts a corner of the saint’s robe, seems to induce her rapture. It’s not difficult to perceive the sexual connotations of the angel’s penetrating arrow.\n 
+While the sculpture was commissioned by Federico Cornaro, a Catholic Cardinal, it still drew criticism from Bernini’s peers for its sensual depiction of religious figures. But by the time Ecstasy of Saint Teresa was unveiled in 1652, when Bernini was in his mid-fifties and widely acclaimed, he was seasoned at deflecting backlash. Naysayers had yet to stop him from carving impassioned faces, voluptuous bodies, and flawed human subjects.\n 
+From a young age, Bernini spent most of his waking hours in the sculpture studio honing his practice. His commitment to the discipline was ardent—almost obsessive—and his ingenious, delicate handling of stone was apparent as early as his teenage years, when he began receiving commissions. Even then, he equated the process of making art with falling in love, and channelled that passion directly into his forms.
+As Bernini’s peer and first biographer Filippo Baldinucci reported, the sculptor would rebuff people who criticized his long work hours with the retort: “Let me be, for I am in love.” He even playfully referred to the statues he toiled over as his girlfriends.\n 
+Though Bernini may have been speaking in jest, the attention he lavished on his sculptures manifested in their astonishing realism. In his deft hands, marble turned into supple skin, tightly coiled muscles, twisting mouths, and single tears—all of which looked as if they’d throb, quiver, or burst into action at any moment.\n     
+Nowhere is this finesse made more clear than in two works, both depicting nude duos, that Bernini executed in his mid-twenties.</p>")
+
+file = File.open('app/assets/images/bernini.jpg')
+story18.image = file 
+story18.save!
