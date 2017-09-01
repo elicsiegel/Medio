@@ -29,7 +29,7 @@ class Search extends React.Component {
   updateResults(event){
     const searchQuery = event.target.value;
   
-    if ( searchQuery.length < 3 ) {
+    if ( searchQuery.length < 2 ) {
       this.props.clearSearchResults();
       return;
     }
@@ -82,10 +82,12 @@ class Search extends React.Component {
     });
 
     return (
-      <div className="stories-search-list-container">
-        <span>Users</span>
+      <div>
+        <div className="stories-search-list-container">
+          <span>Users</span>
+        </div>
         <ul className="search-list sub-search-list">
-          {usersList}
+            {usersList}
         </ul>
       </div>
     );
