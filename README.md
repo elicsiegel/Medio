@@ -16,19 +16,19 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
   The user interface of the `StoriesIndex` is meant to be seamless and easy to navigate:  
 
-![image of notebook index](wireframes/stories_index.png)
+![image of notebook index](./docs/wireframes/stories_index.png)
 
 ### Story Creation and Editing
 
   Story creation and editing are neatly joined together in the `Story Form` component where users can select a `category` and add `title`, `body` and upload a photo for their story. These photos are uploaded through the Paperclip gem and stored on Amazon Web Services. Story editing is enhanced using the Quill.js library, allowing for a more Word-processor-like experience. 
 
-![image of story form](wireframes/story_form.png)
+![image of story form](./docs/wireframes/story_form.png)
 
 ### Follows, Likes and Bookmarks
 
   The user's interaction with stories is made customizable with the addition of `follows`, `likes` and `bookmarks`. 
 
-![image of story detail header](wireframes/story_detail_header.png)
+![image of story detail header](./docs/wireframes/story_detail_header.png)
 
   Each of these features is stored as a join table in the database, with `follows` holding a `follower_id` and `followee_id`, `likes` holding a `story_id` and `user_id` and `bookmarks` holding a `story_id` and `user_id`.
 
@@ -61,7 +61,7 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
   To facilitate a dynamic user experience, a dropdown slice of state is employed to toggle the rendering of different dropdowns. If a dropdown is registered is true, then it will appear on the page and if not it will be hidden. 
 
-  ![search](wireframes/search.png)
+  ![search](./docs/wireframes/search.png)
 
 
 ## Future Directions for the Project
