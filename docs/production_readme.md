@@ -61,7 +61,7 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
   To facilitate a dynamic user experience, a dropdown slice of state is employed to toggle the rendering of different dropdowns. If a dropdown is registered is true, then it will appear on the page and if not it will be hidden. 
 
-  ![search](wireframes/search.png)
+  ![search](<iframe width="560" height="315" src="https://www.youtube.com/embed/3PgY-lN1Kz8" frameborder="0" allowfullscreen></iframe>)
 
 
 ## Future Directions for the Project
