@@ -5,7 +5,7 @@ import LoadingSpinner from '../loading_spinner';
 class StoriesIndex extends React.Component {
   componentDidMount() {
     // request stories from the API 
-    this.props.fetchStories(); 
+    if (this.props.stories.length < 2) this.props.fetchStories(); 
   }
 
   filterByCategory(category) {
