@@ -12,7 +12,7 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
   At the core of Medio are the stories that users can read, create and edit. On the database side, the stories are stored in one table in the database, which contains columns for `id`, `author_id`, `body`, `created_at` and `updated_at`. Stories each belong to one author via their `author_id` which connects to the Users table storing more detailed information about the author. 
 
-  Upon login, stories are fetched from the Rails API and rendered on the index page filtered by category. These stories are held in the `stories` slice of state until the entire page is fully reloaded allowing for easy access to each story's information without another call to the API. In the same API call, comments are brought with each story and then stored in the `comments` slice of state. The story itself is given an array of `comment_ids` to link it to these comments.  
+  When navigating to the root url, stories are fetched from the Rails API and rendered on the index page filtered by category. These stories are held in the `stories` slice of state until the entire page is fully reloaded allowing for easy access to each story's information without another call to the API. In the same API call, comments are brought with each story and then stored in the `comments` slice of state. The story itself is given an array of `comment_ids` to link it to these comments.  
 
   The user interface of the `StoriesIndex` is meant to be seamless and easy to navigate:  
 
@@ -20,7 +20,7 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
 ### Story Creation and Editing
 
-  Story creation and editing are neatly joined together in the `Story Form` component where users can select a `category` and add `title`, `body` and upload a photo for their story. These photos are uploaded through the Paperclip gem and stored on Amazon Web Services. Story editing is enhanced using the Quill.js library, allowing for a more Word-processor-like experience. 
+  Story creation and editing are neatly joined together in the `Story Form` component where users can select a `category` and add `title`, `body` and upload a photo for their story. These photos are uploaded through the Paperclip gem and stored on Amazon Web Services. Story editing is enhanced using the Quill.js library, allowing for a more Word-processor-like experience (editing options appear by double clicking on the text). 
 
 ![image of story form](./docs/wireframes/story_form.png)
 

@@ -93,13 +93,20 @@ class StoryForm extends React.Component {
     const story = Object.assign({}, this.state);
     
     const parsedLinkBody = this.parseLinks(); 
-    
+
+    let ensureCategory;
+    if (this.state.category === "") {
+      ensureCategory = "General"; 
+    } else {
+      ensureCategory = this.state.category; 
+    }
+
     let formData = new FormData();
 
     formData.append("story[title]", this.state.title);
     formData.append("story[body]", parsedLinkBody);
     formData.append("story[author_id]", this.state.author_id);
-    formData.append("story[category]", this.state.category);
+    formData.append("story[category]", ensureCategory);
 
     if (this.state.imageFile !== undefined) {
       formData.append("story[image]", this.state.imageFile);
