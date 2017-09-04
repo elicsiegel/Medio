@@ -80,6 +80,11 @@ form label {
 .form p:hover {
   color: blue;
 }
+
+.form p {
+  cursor: pointer; 
+}
+
 form button {
   max-width: 60px;
   font-family: lato;
@@ -88,6 +93,7 @@ form button {
   background: none;
   border: none;
   margin-top: 15px;
+  cursor: pointer; 
 }
 
 form button:hover {
