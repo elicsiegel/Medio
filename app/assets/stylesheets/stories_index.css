@@ -60,6 +60,10 @@
   margin-left: 15px;
 }
 
+.index-title-body > h4{ 
+  color: black;
+}
+
 .index-title-body > h2{
   font-size: 12px; 
   color: gray;

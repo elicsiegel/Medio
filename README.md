@@ -2,7 +2,7 @@
 
 [Medio live][heroku] 
 
-[heroku]: https://medio.herokuapp.com/
+[heroku]: http://medio.herokuapp.com/
 
 Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
