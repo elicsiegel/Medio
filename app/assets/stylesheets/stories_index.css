@@ -60,6 +60,20 @@
   margin-left: 15px;
 }
 
+.index-title-body > h2{
+  font-size: 12px; 
+  color: gray;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.index-title-body > h1{
+  font-size: 12px; 
+  color: gray;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 .stories-index-img {
   height: 100%; 
 }
