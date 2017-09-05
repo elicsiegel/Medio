@@ -28,8 +28,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "postinstall": "webpack",
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
+    "postinstall": "webpack"
   },
   "engines": {
     "node": "4.1.1",
