@@ -37,5 +37,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-merge": "^4.1.0"
+  }
 }
