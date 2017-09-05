@@ -86,6 +86,7 @@
   background: none;
   border: none;
   outline: none;
+  cursor: pointer; 
 }
 .author-index-image {
   width: 40px;
