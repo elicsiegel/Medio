@@ -119,9 +119,9 @@ class StoryForm extends React.Component {
       })
     } 
     else {
-      this.props.createStory( formData ).then(
-        this.props.history.push(`/`)
-      );
+      this.props.createStory( formData ).then(({story}) => {
+        this.props.history.push(`/stories/${Object.keys(story)[0]}`)
+      })
     }  
   }
 
