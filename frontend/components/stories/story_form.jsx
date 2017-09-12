@@ -150,7 +150,7 @@ class StoryForm extends React.Component {
               <p id="upload-image-p">Drop file here or click to upload Story Photo</p>
             </Dropzone>
           </div>
-          <label>
+          <label className="category-label">
             Pick a category:
             <select value={this.state.category !== "" ? this.state.category : "General"} onChange={this.handleCategoryChange}>
               <option value="General">General</option>

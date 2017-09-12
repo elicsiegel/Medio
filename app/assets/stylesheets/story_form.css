@@ -4,8 +4,6 @@
   align-items: center;
 }
 
-
-
 .story-form form {
   align-items: flex-end;
 }
@@ -48,6 +46,18 @@
 .quill-input-body {
   width: 800px;
   font-size: 75px;
+}
+
+.category-label {
+  margin-top: 10px;
+}
+
+.category-label select {
+  margin-left: 10px;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  font-family: 'lato';
 }
 
 #upload-image-p {
