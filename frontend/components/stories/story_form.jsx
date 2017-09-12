@@ -4,7 +4,6 @@ import Dropzone from 'react-dropzone';
 import ReactQuill from 'react-quill';
 import renderHTML from 'react-render-html';
 
-
 class StoryForm extends React.Component {
 
   constructor(props) {

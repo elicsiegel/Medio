@@ -34,7 +34,6 @@ const App = (props) => (
           <Route path="/" exact component={ StoriesIndexContainer } />
         </div>
       </ScrollToTop>
-      <Footer />
   </div>
 );
 
