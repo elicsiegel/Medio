@@ -85,14 +85,22 @@ class SessionForm extends React.Component {
   render() {
     let title;
     let imageUpload;
+    let otherLink;
+
     if(this.props.formType ===  '/login') {
       title = (
         <h2>Login</h2>
       );
+      otherLink = (
+        <Link to='/signup'><p>Sign Up</p></Link>
+        );
     } else {
       title = (
         <h2>Signup</h2>
       );
+      otherLink = (
+        <Link to='/login'><p>Log In</p></Link>
+        )
       imageUpload = (
         <div className="image-upload">
           <img className="image-box" src={this.state.imageUrl}/>
@@ -123,6 +131,7 @@ class SessionForm extends React.Component {
             {imageUpload}
             <button>Submit</button>
           </form>
+          {otherLink}
           <p onClick={this.logInGuestUser}>Guest Login</p>
         </div>
       

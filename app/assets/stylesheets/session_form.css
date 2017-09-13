@@ -85,6 +85,11 @@ form label {
   cursor: pointer; 
 }
 
+.form a {
+  color: black;
+  text-decoration: none;
+}
+
 form button {
   max-width: 60px;
   font-family: lato;
