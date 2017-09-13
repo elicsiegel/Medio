@@ -12,8 +12,17 @@ class Search extends React.Component {
     this.updateResults = this.updateResults.bind(this);
   }
 
+  componentDidUpdate() {
+    if (this.activateSearchBar) {
+      this.activateSearchBar = false;
+      this.searchInput.focus();
+    }
+  }
+
   showSearchBar(e) {
     e.stopPropagation();
+    this.activateSearchBar = true;
+    this.searchInput.value = "";
     this.props.showSearchBar();
   }
 
@@ -104,7 +113,8 @@ class Search extends React.Component {
           <img onClick={this.showSearchBar} id="search-glass" src={window.staticImages.searchGlass}/>
           <input ref={ el => this.searchInput = el } 
             className={this.props.searchBarVisible ? "input-fade-in" : "inactive"} 
-            placeholder="Search" onChange={this.updateResults} 
+            placeholder="Search" onChange={this.updateResults}
+            onFocus={this.showSearchResults} 
             onClick={this.showSearchResults}/>
         </div>
         <div className={this.props.searchResultsVisible ? "search-list-container" : "inactive"}>
