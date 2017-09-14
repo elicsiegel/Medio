@@ -10,6 +10,7 @@ json.stories do
       json.liker_ids story.liker_ids
       json.category story.category
       json.story_img_url asset_path(story.image.url)
+      json.story_thumb_img_url asset_path(story.image.url(:thumb))
       json.author story.author, :id, :username
       json.author_img_url asset_path(story.author.image.url)
     end

@@ -3,6 +3,8 @@ class Story < ActiveRecord::Base
 
   include PgSearch
 
+  before_destroy :delete_attachments
+
   pg_search_scope :search_for, against: %i(title body category), 
     :using => { 
       :tsearch => {:prefix => true}
@@ -15,10 +17,17 @@ class Story < ActiveRecord::Base
     through: :likes,
     source: :user 
   
-  has_attached_file :image, default_url: "default_story.png"
+  has_attached_file :image, default_url: "default_story.png", styles: { thumb: "293x293#", original: "800x800" }
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   belongs_to :author,
     foreign_key: :author_id,
     class_name: 'User'
+
+  private 
+
+  def delete_attachments
+    self.image = nil 
+  end 
 end 

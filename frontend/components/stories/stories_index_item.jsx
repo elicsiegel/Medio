@@ -46,11 +46,15 @@ class StoriesIndexItem extends React.Component {
     const formBody = this.props.story.body.slice(0, 100); 
     const link = `/stories/${this.props.story.id}`
     const authorLink = `/stories/${this.props.story.author.id}`
+    const background_photo = {
+      backgroundImage: 'url(' + this.props.story.story_thumb_img_url + ')',
+      backgroundSize: "cover"
+    }
+
     return (
       <Link to={link} className="stories-index-item-link">
         <div className="storiesIndexItem">
-          <div className="image-div">
-            <img className="stories-index-img" src={this.props.story.story_img_url} />
+          <div className="image-div" style={background_photo}>
           </div>
           <div className="index-title-body">
             <h4>{this.props.story.title}</h4>
