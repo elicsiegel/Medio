@@ -114,3 +114,7 @@
   min-width: 50%;
   overflow: hidden;
 }
+
+.empty-bookmarks-title h4 {
+  text-align: center;
+}

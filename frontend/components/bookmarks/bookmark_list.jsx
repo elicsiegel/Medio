@@ -16,11 +16,26 @@ class BookmarkList extends React.Component {
           return <StoriesIndexItem createBookmark={this.props.createBookmark} deleteBookmark={this.props.deleteBookmark}
                     currentUser={this.props.currentUser} story={story} key={`story-follower-key${story.id}`}/>
         });
-    return (
-      <div>
+    let bookmarksTitle; 
+    let blankDiv;
+
+    if (bookmarkedStoryItems.length === 0) {
+      bookmarksTitle = (
+        <div className="empty-bookmarks-title">
+          <h4>No bookmarks yet!</h4>
+        </div>
+      )
+    } else {
+      bookmarksTitle = (
         <div className="storiesIndexTitle">
           <h4>Stories you have saved</h4>
         </div>
+      )
+    }
+
+    return (
+      <div>
+        {bookmarksTitle}
         <div className="storiesIndexContainer">
           {bookmarkedStoryItems}
         </div>
