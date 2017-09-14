@@ -1,7 +1,7 @@
 .form-modal-overlay {
-  display: flex; 
+  /*display: flex; 
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;*/
   text-align: center;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -19,8 +19,9 @@
 }
 
 .form {
-  position: fixed;
-  margin: auto;
+  /*position: fixed;*/
+  margin: 0 auto;
+  width: 23%;
   margin-top: 50px;
   padding: 30px;
   padding-left: 45px;
@@ -125,9 +126,5 @@ form button:hover {
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    .form {
-      padding-left: 100%;
-      padding-right: 100%;
-      text-align: center;
-    }
+
 }
