@@ -1,7 +1,4 @@
 .form-modal-overlay {
-  /*display: flex; 
-  align-items: center;
-  flex-direction: column;*/
   text-align: center;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -19,7 +16,6 @@
 }
 
 .form {
-  /*position: fixed;*/
   margin: 0 auto;
   width: 23%;
   margin-top: 50px;
@@ -92,6 +88,7 @@ form label {
 }
 
 form button {
+  text-align: center;
   max-width: 60px;
   font-family: lato;
   outline: none;
