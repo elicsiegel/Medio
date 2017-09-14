@@ -122,3 +122,12 @@ form button:hover {
   animation-name: fade-in;
   animation-duration: 1s;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .form {
+      padding-left: 100%;
+      padding-right: 100%;
+      text-align: center;
+    }
+}
