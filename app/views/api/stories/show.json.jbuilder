@@ -7,6 +7,7 @@ json.story do
     json.story_img_url asset_path(@story.image.url)
     json.author @story.author, :id, :username
     json.author_img_url asset_path(@story.author.image.url)
+    json.story_thumb_img_url asset_path(story.image.url(:thumb))
     json.comment_ids @story.comment_ids
     json.num_likes @story.likes.count
     json.liker_ids @story.liker_ids
