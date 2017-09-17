@@ -9,7 +9,7 @@ class Comments extends React.Component {
     const { deleteComment, commentFormVisible, showCommentForm, createComment, updateComment, currentUser, story, comments} = this.props;
     
     let commentItems;
-
+    let commentTitle;
     if (comments) {
       commentItems = comments.map((comment) => {
         return <CommentItem comment={comment} 
@@ -17,7 +17,11 @@ class Comments extends React.Component {
                   deleteComment={deleteComment}
                   updateComment={updateComment} 
                   key={`comment-key${comment.id}`}/>
-      });  
+      });
+      if (comments.length >= 1) {
+        
+      commentTitle = <h4>Comments</h4>
+      }
     }
 
     let commentForm;
@@ -33,7 +37,7 @@ class Comments extends React.Component {
       <div>
       {commentForm} 
         <div className="commentsTitle">
-          <h4>Comments</h4>
+          {commentTitle}
         </div>
         <div className="commentItemsContainer">
           {commentItems}
