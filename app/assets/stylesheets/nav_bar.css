@@ -44,6 +44,11 @@
   color: black;
 }
 
+.session-links {
+  display: flex;
+  align-items: center;
+}
+
 .session-links a {
   padding: 10px;
   color: #26b56d;
