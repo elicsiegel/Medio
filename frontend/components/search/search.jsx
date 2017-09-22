@@ -55,7 +55,7 @@ class Search extends React.Component {
           <li className="search-list-item" key={`story-id-${story.id}`}>
             <Link to={`/stories/${story.id}`} className={'story-search-link'} onClick={this.props.clearSearchResults}>
               
-                <img className="search-story-img" src={story.story_img_url} />
+                <img className="search-story-img" src={story.story_thumb_img_url} />
                 <span>{ story.title }</span>
                 
             </Link>
