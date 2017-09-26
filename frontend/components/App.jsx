@@ -1,6 +1,5 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import Footer from './greeting/footer';
 import SessionFormContainer from './session/session_form_container'; 
 import StoriesIndexContainer from './stories/stories_index_container';
 import StoryFormContainer from './stories/story_form_container';
