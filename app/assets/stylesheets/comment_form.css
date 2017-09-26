@@ -29,6 +29,8 @@
 .comment-item {
   margin: 10px;
   border: 1px solid black;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
+  border-radius: 10px;
   min-height: 130px;
   max-width: 600px;
   min-width: 600px;
