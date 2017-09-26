@@ -15,7 +15,7 @@ import ScrollToTop from './ScrollToTop';
 
 const App = (props) => (
   <div onClick={props.deactivateAllDropdowns}>
-      <div className="nav">
+      <div className="nav fixed-top">
         <Link to='/'><h1>Medio</h1></Link>
         <SearchContainer />
         <GreetingContainer />

@@ -4,7 +4,16 @@
   align-items: center;
   padding-left: 150px;
   padding-right: 150px; 
+  background: white;
  }
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
 .nav a {
   text-decoration: none; 

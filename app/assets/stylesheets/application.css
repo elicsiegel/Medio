@@ -18,3 +18,9 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.content {
+  display: flex;
+  margin-top: 8%; 
+  justify-content: center;
+}
+
