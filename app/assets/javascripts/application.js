@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(window).scroll(function() {
+  if ($(".nav").offset().top > 80) {
+    $(".nav").addClass("navbar-shrink");
+  } else {
+    $(".nav").removeClass("navbar-shrink");
+  }
+});

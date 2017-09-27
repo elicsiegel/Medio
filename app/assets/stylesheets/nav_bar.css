@@ -2,17 +2,22 @@
   display: flex; 
   justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
   padding-left: 150px;
   padding-right: 150px; 
   background: white;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
  }
+
+.navbar-shrink {
+  padding-top: 0px;
+}
 
 .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  /*z-index: 1030;*/
 }
 
 .nav a {
