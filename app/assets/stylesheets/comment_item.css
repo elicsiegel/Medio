@@ -29,6 +29,10 @@
   color: gray;
 }
 
+.comment-author-info h4 {
+  color: #26b56d;
+}
+
 .comment-author-info > * {
   margin: 5px;
 }

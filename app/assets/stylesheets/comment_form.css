@@ -8,12 +8,14 @@
 
 .comment-form textarea {
   font-family: lato;
+  border: 1px solid lightgray;
+  border-radius: 4px;
 }
 
 .comment-form-input {
   width: 500px;
   height: 50px;
-  font-size: 25px;
+  font-size: 20px;
   outline: none;
   resize: none;
 }
@@ -28,9 +30,9 @@
 
 .comment-item {
   margin: 10px;
-  border: 1px solid black;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
-  border-radius: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+  border-radius: 4px;
   min-height: 130px;
   max-width: 600px;
   min-width: 600px;
