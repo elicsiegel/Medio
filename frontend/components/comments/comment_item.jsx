@@ -71,6 +71,7 @@ class CommentItem extends React.Component {
 
       if (this.state.editStatus) { 
         cancelButton = <button onClick={this.handleCancel}>Cancel</button>
+        editButton = null;
         editForm = (
             <form onSubmit={this.handleUpdate}>
               <input className="comment-body-input" value={this.state.comment.body} onChange={this.update('body')} required/>
