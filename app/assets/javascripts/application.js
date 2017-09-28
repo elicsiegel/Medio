@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(window).scroll(function() {
-  if ($(".nav").offset().top > 80) {
+  if ($(".nav").offset().top > 40) {
     $(".nav").addClass("navbar-shrink");
   } else {
     $(".nav").removeClass("navbar-shrink");
