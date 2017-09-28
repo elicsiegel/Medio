@@ -12,6 +12,7 @@
 .navbar-shrink {
   padding-top: 0px;
   border-bottom: 1px solid lightgray;
+  box-shadow: 1px 1px 8px rgba(102,102,102,0.3);
 }
 
 .fixed-top {
