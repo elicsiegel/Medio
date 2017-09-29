@@ -88,6 +88,10 @@ Medio is a full-stack web application inspired by Medium.  It utilizes Ruby on R
 
 In addition to the features already implemented, I plan to continue work on this project.  The next steps for Medio are outlined below.
 
+### Saved Highlights
+
+Users can highlight a portion of text within an article and save it to a list of highlighted texts. 
+
 ### Customized Categories
 
 Currently a user is only able to choose a category for stories they create. In the future it would be nice to add a feature allowing the user to choose categories they are particularly interested in and have these categories appear at the top of the user's home feed. 
