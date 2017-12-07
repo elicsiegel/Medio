@@ -36,6 +36,7 @@
 
 .search-bar input {
   outline: none;
+  background: transparent;
 }
 
 .search-story-img {
@@ -108,4 +109,10 @@
 .search-story-item > * {
   margin-left: 8px;
   margin-right: 8px;
+}
+
+@media (max-width: 910px) {
+  .search-bar {
+    display: none;
+  }
 }
