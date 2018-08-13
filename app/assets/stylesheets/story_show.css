@@ -81,6 +81,7 @@
 
 .story-detail-body {
   white-space: pre-wrap;
+  line-height: 220%;
 }
 
 .story-detail-img {
